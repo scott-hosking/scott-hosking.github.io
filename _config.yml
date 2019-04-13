@@ -158,6 +158,7 @@ footer:
 include:
   - .htaccess
   - _pages
+  - _bibliography
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -231,6 +232,7 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+
 
 # mimic GitHub Pages with --safe
 whitelist:
