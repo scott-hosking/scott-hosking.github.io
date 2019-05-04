@@ -159,6 +159,7 @@ include:
   - .htaccess
   - _pages
   - _bibliography
+  - _notebooks
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
