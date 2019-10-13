@@ -6,6 +6,8 @@ main:
     url: /publications
   - title: "Projects"
     url: /projects
+  - title: "Jupyter Notebooks"
+    url: /jupyter_notebooks
   # - title: "Code"
   #   url: /code
   # - title: "Sample Posts"
