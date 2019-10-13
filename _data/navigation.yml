@@ -8,8 +8,8 @@ main:
     url: /projects
   - title: "Jupyter Notebooks"
     url: /jupyter_notebooks
-  # - title: "Code"
-  #   url: /code
+  - title: "Code"
+    url: /code
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
