@@ -1,7 +1,7 @@
 ---
-permalink: /jupyter_notebooks
-title: "Jupyter Notebooks"
-excerpt: "Jupyter Notebooks"
+permalink: /code
+title: "Code: Software and Tools"
+excerpt: "Code"
 ---
 
 * ...
