@@ -1,0 +1,7 @@
+---
+permalink: /code
+title: "Code: Software and Tools"
+excerpt: "xode"
+---
+
+* ...
