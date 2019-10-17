@@ -5,7 +5,7 @@ excerpt: "here are some tools I have built to improve work efficiency"
 toc: True
 ---
 
-### Get **weather station** data from around the globe 
+## Get **weather station** data (Global) 
 * [GitHub repo](https://github.com/scott-hosking/get_station_data)
 * [Example Notebook](/notebooks/xarray_examples)
 
@@ -25,7 +25,7 @@ my_stns = nearest_stn(stn_md, london_lon_lat[0], london_lon_lat[1],
 df = ghcnd.get_data(my_stns)
 ```
 
-### Get **climate model** output (CMIP5/6)
+## Get **climate model** output (CMIP5/6)
 * [GitHub repo](https://github.com/scott-hosking/baspy)
 
 ```python
