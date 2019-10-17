@@ -4,11 +4,11 @@ main:
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "Publications"
     url: /publications
-  - title: "Projects"
-    url: /projects
-  - title: "Jupyter Notebooks"
+  # - title: "Projects"
+  #   url: /projects
+  - title: "Notebooks"
     url: /notebooks
-  - title: "Code"
+  - title: "Tools"
     url: /code
   # - title: "Sample Posts"
   #   url: /year-archive/
