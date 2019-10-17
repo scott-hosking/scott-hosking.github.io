@@ -108,7 +108,7 @@ analytics:
 author:
   name             : "Scott Hosking"
   avatar           : "/images/profile.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Environmental Data Scientist | Climate Physicist | Python Wrangler"
+  bio              : "Environmental Data Scientist | Climate Physicist | Applied AI | Python Coder"
   location         : "Cambridge, UK"
   email            : "jask 'at' bas.ac.uk" 
   links:
