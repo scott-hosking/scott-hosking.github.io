@@ -1,7 +1,7 @@
 ---
 title: 'Using Baspy and Xarray to work with CMIP data'
 date: 2018-10-17
-permalink: /xarray_examples/
+permalink: /notebooks/xarray_examples/
 tags:
   - python
   - xarray

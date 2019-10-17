@@ -4,4 +4,4 @@ title: "Jupyter Notebooks"
 excerpt: "Jupyter Notebooks"
 ---
 
-* Here is a Jupyer Notebook to demonstrate how to start using Xarray, [Notebook](/xarray_examples) 
+* [Here](/notebooks/xarray_examples) is a Jupyer Notebook to demonstrate how to start using the Python package 'Xarray' 
