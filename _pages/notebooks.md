@@ -2,10 +2,6 @@
 permalink: /notebooks
 title: "Jupyter Notebooks"
 excerpt: "A small collection of Jupyter notebooks"
-tags:
-  - python
-  - jupyter
-  - notebooks
 ---
 
 Here I have listed some Python notebooks I use for research and teaching. Please feel free to get in touch if you have any comments - even just to say that you found these useful
