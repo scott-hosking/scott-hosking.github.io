@@ -9,8 +9,6 @@ tags:
   - asl
 ---
 
-Adapted from: https://scikit-image.org/docs/dev/api/skimage.feature.html?highlight=peak_local_max#skimage.feature.peak_local_max
-
 
 ```python
 import xarray as xr
