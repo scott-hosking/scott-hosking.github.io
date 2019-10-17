@@ -12,5 +12,5 @@ Here I have listed some Python notebooks I use for research and teaching. Please
 * [Using Baspy and Xarray to work with CMIP data](/notebooks/xarray_examples) 
 
 ### Research specific notebooks
-* Automatic detection of low pressure systems from pressure fields or geopotential height fields. [Used here to detect the 'Amundsen Sea Low'](/notebooks/xarray_examples)
+* Automatic detection of low pressure systems from pressure fields or geopotential height fields. [Used here to detect the 'Amundsen Sea Low'](/notebooks/asl_detection)
 
