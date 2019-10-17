@@ -7,7 +7,7 @@ toc: True
 
 ## Get **weather station** data (Global) 
 * [GitHub repo](https://github.com/scott-hosking/get_station_data)
-* [Example Notebook](/notebooks/xarray_examples)
+* Notebooks for working with [monthly](/notebooks/ghcn_monthly) and [daily](/notebooks/ghcn_daily) averaged data
 
 ```python
 from get_station_data import ghcnd
