@@ -6,7 +6,7 @@ tags:
   - python
 ---
 
-Here I have lists some Python notebooks I use for research and teaching. Please feel free to get in touch if you have any comments. It's also helpful to hear if you found these useful :-)
+Here I have listed some Python notebooks I use for research and teaching. Please feel free to get in touch if you have any comments - even just to say that you found these useful
 
 ### Getting started...
 * [Using Baspy and Xarray to work with CMIP data](/notebooks/xarray_examples) 
