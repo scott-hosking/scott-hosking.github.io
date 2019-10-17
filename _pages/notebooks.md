@@ -1,5 +1,5 @@
 ---
-permalink: /jupyter_notebooks
+permalink: /notebooks
 title: "Jupyter Notebooks"
 excerpt: "Jupyter Notebooks"
 ---
