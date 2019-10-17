@@ -1,7 +1,7 @@
 ---
 permalink: /notebooks
 title: "Jupyter Notebooks"
-excerpt: "A small collection of Jupyter notebooks"
+excerpt: "A small (but growing) collection of Jupyter notebooks"
 ---
 
 Here I have listed some `Python` notebooks I use for research and teaching. Please feel free to get in touch if you have any ~~complaints~~ comments - _even if just to say you found these useful_
@@ -13,3 +13,4 @@ Here I have listed some `Python` notebooks I use for research and teaching. Plea
 ## Research
 * Automatic detection of low pressure systems from pressure or geopotential height fields. Used here in this example to detect the [_Amundsen Sea Low_](/notebooks/asl_detection)
 
+_I have other notebooks [here](https://nbviewer.jupyter.org/github/scott-hosking/notebooks/tree/master/) which I may or may not migrate over time to this site_
