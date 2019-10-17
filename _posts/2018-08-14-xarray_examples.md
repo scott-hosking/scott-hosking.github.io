@@ -1,6 +1,12 @@
-
-# Using Baspy + Xarray to work with CMIP data
-
+---
+title: 'Using Baspy + Xarray to work with CMIP data'
+date: 2015-08-14
+permalink: /posts/2018/04/xarray_examples/
+tags:
+  - python
+  - xarray
+  - baspy
+---
 
 ```python
 import baspy as bp
