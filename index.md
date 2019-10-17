@@ -22,4 +22,4 @@ I am an Environmental Data Scientist at the British Antarctic Survey (BAS).  My 
 * Weather and climate signals in high-resolution ice core records
 * Atmospheric teleconnections between the tropics and the polar regions
 
-### _Members of my research group are listed on my [BAS web profile](https://www.bas.ac.uk/profile/jask/)_
+<sub>_Members of my research group are listed on my [BAS web profile](https://www.bas.ac.uk/profile/jask/)_</sub>
