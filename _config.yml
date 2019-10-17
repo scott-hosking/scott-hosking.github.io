@@ -115,10 +115,10 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       # url: mailto:your.name@email.com
-    - label: "Website"
+    - label: "www"
       icon: "fas fa-fw fa-link"
       url: "https://scott-hosking.github.io/"
-    - label: "Twitter"
+    - label: "Twitter: @scotthosking"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/scotthosking"
     - label: "LinkedIn"
