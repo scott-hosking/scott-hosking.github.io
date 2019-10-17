@@ -13,4 +13,4 @@ Here I have listed some `Python` notebooks I use for research and teaching. Plea
 ## Research
 * Automatic detection of low pressure systems from pressure or geopotential height fields. Used here in this example to detect the [_Amundsen Sea Low_](/notebooks/asl_detection)
 
-_I have other notebooks [here](https://nbviewer.jupyter.org/github/scott-hosking/notebooks/tree/master/) which I may or may not migrate over time to this site_
+<sub>_I have other notebooks [here](https://nbviewer.jupyter.org/github/scott-hosking/notebooks/tree/master/) which I may or may not migrate over time to this site_</sub>
