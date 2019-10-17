@@ -69,7 +69,7 @@ da_mask.isel(time=0).plot.pcolormesh( 'longitude', 'latitude', cmap='Reds', tran
 
 
 
-![png](Amundsen_Sea_Low_6_1.png)
+![png](/images/Amundsen_Sea_Low_6_1.png)
 
 
 
@@ -398,7 +398,7 @@ print('')
 
 
 
-![png](Amundsen_Sea_Low_15_1.png)
+![png](/images/Amundsen_Sea_Low_15_1.png)
 
 
 
