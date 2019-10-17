@@ -1,15 +1,15 @@
 ---
 permalink: /code
-title: "Code: Software and Tools"
-excerpt: "code"
+title: "Code / Software / Tools"
+excerpt: "here are some tools I have built to improve work efficiency"
 toc: True
 ---
 
-### Easily grab weather station data from around the globe ([GitHub repo](https://github.com/scott-hosking/get_station_data))
+### Get **weather station** data from around the globe 
+* [GitHub repo](https://github.com/scott-hosking/get_station_data)
+* [Example Notebook](/notebooks/xarray_examples)
 
 ```python
-import numpy as np
-import pandas as pd
 from get_station_data import ghcnd
 from get_station_data.util import nearest_stn
 
@@ -18,13 +18,15 @@ stn_md = ghcnd.get_stn_metadata()
 
 ### Choose a location (lon/lat) and number of nearest neighbours
 london_lon_lat = -0.1278, 51.5074
-my_stns = nearest_stn(stn_md, london_lon_lat[0], london_lon_lat[1], n_neighbours=5 )
+my_stns = nearest_stn(stn_md, london_lon_lat[0], london_lon_lat[1],
+                        n_neighbours=5 )
 
 ### Download and extract data into a pandas DataFrame
 df = ghcnd.get_data(my_stns)
 ```
 
-### Making it far easier to read in and work with large volumes of climate model output from CMIP5/6 ([GitHub repo](https://github.com/scott-hosking/baspy))
+### Get **climate model** output (CMIP5/6)
+* [GitHub repo](https://github.com/scott-hosking/baspy)
 
 ```python
 import baspy as bp

@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: "About me"
-excerpt: "About me"
+excerpt: "Homepage - bio, my roles, research interests etc"
 layout: single
 author_profile: true
 ---
