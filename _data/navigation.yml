@@ -8,7 +8,7 @@ main:
   #   url: /projects
   - title: "Notebooks"
     url: /notebooks
-  - title: "Tools"
+  - title: "Code:Tools"
     url: /code
   # - title: "Sample Posts"
   #   url: /year-archive/
