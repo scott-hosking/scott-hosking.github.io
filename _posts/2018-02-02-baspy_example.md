@@ -284,18 +284,8 @@ da
 
 
 ```python
-print('shape =', da.shape, '\n')
-
 da.plot()
-```
-
-    shape = (420, 180, 288) 
-    
-
-
-
-
-
+```    
     (array([  69415.,  442264.,  428669., 1430675., 1719399., 1709979.,
             4552300., 4731607., 6553416.,  135076.]),
      array([198.42273, 210.32277, 222.22281, 234.12283, 246.02287, 257.9229 ,
@@ -335,7 +325,9 @@ crs = ccrs.SouthPolarStereo(central_longitude=0.0)
 ax = plt.subplot(projection=crs)
 ax.set_extent([-180,180,-90,-60], ccrs.PlateCarree() )
 ax.gridlines(ylocs=range(-90,-30,5))
-da.isel(time=0).plot.contourf(ax=ax, transform=ccrs.PlateCarree(), cmap=plt.cm.Blues_r, extend='both')
+da.isel(time=0).plot.contourf(ax=ax, transform=ccrs.PlateCarree(), 
+                                  cmap=plt.cm.Blues_r, 
+                                  extend='both')
 ax.coastlines('110m', color='k')
 ```
 

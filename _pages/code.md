@@ -36,9 +36,9 @@ df = ghcnd.get_data(my_stns)
 import baspy as bp
 
 ### Retrieve a filtered catalogue as a Pandas DataFrame
-df = bp.catalogue(dataset='cmip5', Model='HadGEM2-CC', RunID='r1i1p1', 
-                    Experiment='historical', Var=['tas', 'pr'], 
-                    Frequency='mon')
+df = bp.catalogue(dataset='cmip5', Model='HadGEM2-CC', 
+                    RunID='r1i1p1', Experiment='historical', 
+                    Var=['tas', 'pr'], Frequency='mon')
 
 ### Iterate over rows in catalogue
 for index, row in df.iterrows():

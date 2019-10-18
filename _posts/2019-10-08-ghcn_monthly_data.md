@@ -17,6 +17,7 @@ A README file can be found [here](ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v3/READM
 
 To run this script you will need to download the .dat and .inv files stored in the compressed files (ghncm.*.tar.gz) found [here](ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v3/)
 
+The code can be downloaded from the [_get_station_data_ github repository](https://github.com/scott-hosking/get_station_data)
 
 ```python
 import numpy as np

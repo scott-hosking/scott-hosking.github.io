@@ -14,6 +14,8 @@ A set of Python tools to make it easier to extract weather station data (e.g., t
 
 More information on the data can be found [here](https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt)
 
+The code can be downloaded from the [_get_station_data_ github repository](https://github.com/scott-hosking/get_station_data)
+
 
 ```python
 from get_station_data import ghcnd
@@ -587,7 +589,7 @@ df['PRCP'].plot.hist(bins=40)
 
 
 
-![png](/images/notebooks/ghcn_daily/output_14_1.png)
+![png](/images/notebooks/ghcn_daily_data/output_14_1.png)
 
 
 ### Plot time series for one station
@@ -606,5 +608,5 @@ heathrow['PRCP'].plot()
 
 
 
-![png](/images/notebooks/ghcn_daily/output_16_1.png)
+![png](/images/notebooks/ghcn_daily_data/output_16_1.png)
 
