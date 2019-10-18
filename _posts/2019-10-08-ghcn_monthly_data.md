@@ -1,21 +1,12 @@
----
-title: 'Get monthly average weather station data (Global)'
-date: 2018-10-17
-permalink: /notebooks/ghcn_monthly/
-tags:
-  - python
-  - weather station
-  - ghcn
-  - notebook
-  - jupyter
----
+
+# Get monthly average weather station data (Global)
 
 Extract countries of interest (along with their coordinates) from the
-[Global Historical Climatology Network Monthly (GHCNM) Version 3](https://www.ncdc.noaa.gov/ghcnm/v3.php)
+[Global Historical Climatology Network - Monthly (GHCNM) Version 3](https://www.ncdc.noaa.gov/ghcnm/v3.php)
 
-README: ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v3/README
+A README file can be found [here](ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v3/README)
 
-To run this script you will need to download the .dat and .inv files stored in the compressed files (ghncm.*.tar.gz) found here ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v3/ 
+To run this script you will need to download the .dat and .inv files stored in the compressed files (ghncm.*.tar.gz) found [here](ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v3/)
 
 
 ```python
@@ -24,11 +15,11 @@ import pandas as pd
 from get_station_data import ghcnm
 ```
 
+### Name of original data file from GHCN-M
+ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v3/
+
 
 ```python
-### Name of original data file from GHCN-M
-### ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v3/
-
 data_version = 'v3.3.0.20180404'
 data_fname   = 'raw_data/ghcnm.tavg.'+data_version+'.qca.dat'
 stn_md_fname = 'raw_data/ghcnm.tavg.'+data_version+'.qca.inv'
@@ -119,9 +110,10 @@ stn_md.head()
 
 
 
+### Specify countries to extract data from
+
 
 ```python
-### Specify stations to analyse
 country_names = ['Egypt', 'Libya', 'Sudan', 'ISRAEL', \
                     'SAUDI ARABIA', 'Chad', 'Jordan']
 
@@ -211,213 +203,20 @@ my_stns.head()
 
 
 
+### Extract data for specified stations into a Pandas DataFrame
+
 
 ```python
-### Extract data for specified stations into a Pandas DataFrame
 df = ghcnm.get_data(data_fname, my_stns)
-df.tail(n=10)
+df.columns
 ```
 
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country</th>
-      <th>name</th>
-      <th>station</th>
-      <th>lat</th>
-      <th>lon</th>
-      <th>elev</th>
-      <th>year</th>
-      <th>month</th>
-      <th>variable</th>
-      <th>value</th>
-      <th>dmflag</th>
-      <th>qcflag</th>
-      <th>dsflag</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>79298</th>
-      <td>JORDAN</td>
-      <td>AQABA AIRPORT</td>
-      <td>62440340000</td>
-      <td>29.63</td>
-      <td>35.02</td>
-      <td>51</td>
-      <td>1990</td>
-      <td>3</td>
-      <td>TAVG</td>
-      <td>18.9</td>
-      <td></td>
-      <td></td>
-      <td>W</td>
-    </tr>
-    <tr>
-      <th>79299</th>
-      <td>JORDAN</td>
-      <td>AQABA AIRPORT</td>
-      <td>62440340000</td>
-      <td>29.63</td>
-      <td>35.02</td>
-      <td>51</td>
-      <td>1990</td>
-      <td>4</td>
-      <td>TAVG</td>
-      <td>24.3</td>
-      <td></td>
-      <td></td>
-      <td>W</td>
-    </tr>
-    <tr>
-      <th>79300</th>
-      <td>JORDAN</td>
-      <td>AQABA AIRPORT</td>
-      <td>62440340000</td>
-      <td>29.63</td>
-      <td>35.02</td>
-      <td>51</td>
-      <td>1990</td>
-      <td>5</td>
-      <td>TAVG</td>
-      <td>26.9</td>
-      <td></td>
-      <td></td>
-      <td>W</td>
-    </tr>
-    <tr>
-      <th>79301</th>
-      <td>JORDAN</td>
-      <td>AQABA AIRPORT</td>
-      <td>62440340000</td>
-      <td>29.63</td>
-      <td>35.02</td>
-      <td>51</td>
-      <td>1990</td>
-      <td>6</td>
-      <td>TAVG</td>
-      <td>30.5</td>
-      <td></td>
-      <td></td>
-      <td>W</td>
-    </tr>
-    <tr>
-      <th>79302</th>
-      <td>JORDAN</td>
-      <td>AQABA AIRPORT</td>
-      <td>62440340000</td>
-      <td>29.63</td>
-      <td>35.02</td>
-      <td>51</td>
-      <td>1990</td>
-      <td>7</td>
-      <td>TAVG</td>
-      <td>32.4</td>
-      <td></td>
-      <td></td>
-      <td>W</td>
-    </tr>
-    <tr>
-      <th>79303</th>
-      <td>JORDAN</td>
-      <td>AQABA AIRPORT</td>
-      <td>62440340000</td>
-      <td>29.63</td>
-      <td>35.02</td>
-      <td>51</td>
-      <td>1990</td>
-      <td>8</td>
-      <td>TAVG</td>
-      <td>31.7</td>
-      <td></td>
-      <td></td>
-      <td>W</td>
-    </tr>
-    <tr>
-      <th>79304</th>
-      <td>JORDAN</td>
-      <td>AQABA AIRPORT</td>
-      <td>62440340000</td>
-      <td>29.63</td>
-      <td>35.02</td>
-      <td>51</td>
-      <td>1990</td>
-      <td>9</td>
-      <td>TAVG</td>
-      <td>28.9</td>
-      <td></td>
-      <td></td>
-      <td>W</td>
-    </tr>
-    <tr>
-      <th>79305</th>
-      <td>JORDAN</td>
-      <td>AQABA AIRPORT</td>
-      <td>62440340000</td>
-      <td>29.63</td>
-      <td>35.02</td>
-      <td>51</td>
-      <td>1990</td>
-      <td>10</td>
-      <td>TAVG</td>
-      <td>26.8</td>
-      <td></td>
-      <td></td>
-      <td>W</td>
-    </tr>
-    <tr>
-      <th>79306</th>
-      <td>JORDAN</td>
-      <td>AQABA AIRPORT</td>
-      <td>62440340000</td>
-      <td>29.63</td>
-      <td>35.02</td>
-      <td>51</td>
-      <td>1990</td>
-      <td>11</td>
-      <td>TAVG</td>
-      <td>23.2</td>
-      <td></td>
-      <td></td>
-      <td>W</td>
-    </tr>
-    <tr>
-      <th>79307</th>
-      <td>JORDAN</td>
-      <td>AQABA AIRPORT</td>
-      <td>62440340000</td>
-      <td>29.63</td>
-      <td>35.02</td>
-      <td>51</td>
-      <td>1990</td>
-      <td>12</td>
-      <td>TAVG</td>
-      <td>18.0</td>
-      <td></td>
-      <td></td>
-      <td>W</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+    Index(['country', 'name', 'station', 'lat', 'lon', 'elev', 'year', 'month',
+           'variable', 'value', 'dmflag', 'qcflag', 'dsflag'],
+          dtype='object')
 
 
 
@@ -596,8 +395,9 @@ df.drop(columns=['dmflag', 'qcflag', 'dsflag']).tail(n=10)
 
 
 
+### Save to file
+
 
 ```python
-### Save to file
 df.to_csv('Egypt_surrounding_ghcnm.csv', index=False)
 ```

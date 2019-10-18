@@ -1,23 +1,9 @@
----
-title: 'Get daily average weather station data (Global)'
-date: 2018-10-17
-permalink: /notebooks/ghcn_daily/
-tags:
-  - python
-  - weather station
-  - ghcn
-  - notebook
-  - jupyter
----
 
-A set of Python tools to make it easier to work with station data from [Global Historical Climatology Network Daily (GHCND)](https://www.ncdc.noaa.gov/ghcn-daily-description).
+# Get daily average weather station data (Global)
 
-Extract variable/element of interest from the
-Global Historical Climatology Network Daily (GHCND)
+A set of Python tools to make it easier to extract weather station data (e.g., temperature, precipitation) from the [Global Historical Climatology Network - Daily (GHCND)](https://www.ncdc.noaa.gov/ghcn-daily-description)
 
-More information on the data can be found here:
-https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt
-
+More information on the data can be found [here](https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt)
 
 
 ```python
@@ -27,15 +13,21 @@ from get_station_data.util import nearest_stn
 %matplotlib inline 
 ```
 
+### Read station metadata
+
 
 ```python
-### Read station metadata
 stn_md = ghcnd.get_stn_metadata()
+```
 
 ### Choose a location (lon/lat) and number of nearest neighbours
+
+
+```python
 london_lon_lat = -0.1278, 51.5074
-my_stns = nearest_stn(stn_md, london_lon_lat[0], london_lon_lat[1], 
-                          n_neighbours=5 )
+my_stns = nearest_stn(stn_md, 
+                        london_lon_lat[0], london_lon_lat[1], 
+                        n_neighbours=5 )
 my_stns
 ```
 
@@ -69,7 +61,7 @@ my_stns
   </thead>
   <tbody>
     <tr>
-      <th>47080</th>
+      <th>52113</th>
       <td>UKE00105915</td>
       <td>51.5608</td>
       <td>0.1789</td>
@@ -77,7 +69,7 @@ my_stns
       <td>HAMPSTEAD</td>
     </tr>
     <tr>
-      <th>47132</th>
+      <th>52165</th>
       <td>UKM00003772</td>
       <td>51.4780</td>
       <td>-0.4610</td>
@@ -85,7 +77,7 @@ my_stns
       <td>HEATHROW</td>
     </tr>
     <tr>
-      <th>47065</th>
+      <th>52098</th>
       <td>UKE00105900</td>
       <td>51.8067</td>
       <td>0.3581</td>
@@ -93,7 +85,7 @@ my_stns
       <td>ROTHAMSTED</td>
     </tr>
     <tr>
-      <th>47158</th>
+      <th>52191</th>
       <td>UKW00035054</td>
       <td>51.2833</td>
       <td>0.4000</td>
@@ -101,7 +93,7 @@ my_stns
       <td>WEST MALLING</td>
     </tr>
     <tr>
-      <th>47098</th>
+      <th>52131</th>
       <td>UKE00107650</td>
       <td>51.4789</td>
       <td>0.4489</td>
@@ -114,9 +106,10 @@ my_stns
 
 
 
+### Download and extract data into a pandas DataFrame
+
 
 ```python
-### Download and extract data into a pandas DataFrame
 df = ghcnd.get_data(my_stns)
 
 df.head()
@@ -251,10 +244,11 @@ df.head()
 
 
 
+### Filter data for, e.g., a single variable
+
 
 ```python
-### Filter data for, e.g., a single variable
-var = 'PRCP'
+var = 'PRCP'   # precipitation
 df = df[ df['element'] == var ]
 
 ### Tidy up columns
@@ -562,32 +556,35 @@ df.drop(columns=['mflag','qflag','sflag']).tail(n=10)
 
 
 
+### Save to file
+
 
 ```python
-### Save to file
 df.to_csv('London_5stns_GHCN-D.csv', index=False)
 ```
 
+### Plot histogram of all data
+
 
 ```python
-### Plot histogram of all data
 df['PRCP'].plot.hist(bins=40)
 ```
 
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x7f5e4809f0b8>
+    <matplotlib.axes._subplots.AxesSubplot at 0x11ae36898>
 
 
 
 
-![png](/images/ghcnd_output_7_1.png)
+![png](output_14_1.png)
 
+
+### Plot time series for one station
 
 
 ```python
-### plot time series for one station
 heathrow = df[ df['name'] == 'HEATHROW' ]
 heathrow['PRCP'].plot()
 ```
@@ -595,10 +592,10 @@ heathrow['PRCP'].plot()
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x7f5e4967af60>
+    <matplotlib.axes._subplots.AxesSubplot at 0x81f0d7240>
 
 
 
 
-![png](/images/ghcnd_output_8_1.png)
+![png](output_16_1.png)
 
