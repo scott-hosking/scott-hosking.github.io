@@ -1,5 +1,14 @@
-
-# Get daily average weather station data (Global)
+---
+title: 'Get daily average weather station data (Global)'
+date: 2018-10-17
+permalink: /notebooks/ghcn_daily/
+tags:
+  - python
+  - weather station
+  - ghcn
+  - notebook
+  - jupyter
+---
 
 A set of Python tools to make it easier to extract weather station data (e.g., temperature, precipitation) from the [Global Historical Climatology Network - Daily (GHCND)](https://www.ncdc.noaa.gov/ghcn-daily-description)
 
@@ -578,7 +587,7 @@ df['PRCP'].plot.hist(bins=40)
 
 
 
-![png](output_14_1.png)
+![png](/_posts/ghcn_daily/output_14_1.png)
 
 
 ### Plot time series for one station
@@ -597,5 +606,5 @@ heathrow['PRCP'].plot()
 
 
 
-![png](output_16_1.png)
+![png](/_posts/ghcn_daily/output_16_1.png)
 

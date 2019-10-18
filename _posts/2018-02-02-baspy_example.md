@@ -1,5 +1,14 @@
-
-# Using BASpy to read in climate model data (CMIP5) into Xarray 
+---
+title: 'Using BASpy to read in climate model data (CMIP5) into Xarray'
+date: 2018-10-17
+permalink: /notebooks/baspy_using_xarray/
+tags:
+  - python
+  - xarray
+  - baspy
+  - cartopy
+  - cmip
+---
 
 For this notebook to work you will need to install:
 - [BASpy](https://github.com/scott-hosking/baspy) (for getting data)
@@ -297,7 +306,7 @@ da.plot()
 
 
 
-![png](output_10_2.png)
+![png](/_posts/baspy_example/output_10_2.png)
 
 
 ### Plot map for first time index
@@ -315,7 +324,7 @@ da.isel(time=0).plot()
 
 
 
-![png](output_12_1.png)
+![png](/_posts/baspy_example/output_12_1.png)
 
 
 ### Plot using a polarstereo map projection
@@ -338,5 +347,5 @@ ax.coastlines('110m', color='k')
 
 
 
-![png](output_14_1.png)
+![png](/_posts/baspy_example/output_14_1.png)
 

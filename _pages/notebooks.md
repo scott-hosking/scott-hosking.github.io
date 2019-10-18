@@ -7,7 +7,7 @@ excerpt: "A small (but growing) collection of Jupyter notebooks"
 Here I have listed some Python notebooks I use for research and teaching. Please feel free to get in touch if you have any ~~complaints~~ comments - _even if just to say you found these useful_
 
 ## Getting started
-* Analysing climate model data (CMIP5) using [**Xarray** with the help of **BASpy**](/notebooks/xarray_examples) 
+* Using [**BASpy** with **Xarray**](/notebooks/baspy_using_xarray) to read in climate model data (CMIP5)
 * Getting weather station data from around the globe (both [monthly](/notebooks/ghcn_monthly) and [daily](/notebooks/ghcn_daily) averaged data) 
 
 ## Research

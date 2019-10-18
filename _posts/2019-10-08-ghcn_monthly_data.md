@@ -1,5 +1,14 @@
-
-# Get monthly average weather station data (Global)
+---
+title: 'Get monthly average weather station data (Global)'
+date: 2018-10-17
+permalink: /notebooks/ghcn_monthly/
+tags:
+  - python
+  - weather station
+  - ghcn
+  - notebook
+  - jupyter
+---
 
 Extract countries of interest (along with their coordinates) from the
 [Global Historical Climatology Network - Monthly (GHCNM) Version 3](https://www.ncdc.noaa.gov/ghcnm/v3.php)
