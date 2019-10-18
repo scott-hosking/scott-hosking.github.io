@@ -9,6 +9,8 @@ tags:
   - asl
 ---
 
+This work is a continuation of my 2013 and 2016 papers as described [here](https://legacy.bas.ac.uk/data/absl/)
+
 
 ```python
 import xarray as xr
@@ -18,6 +20,8 @@ import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 from skimage.feature import peak_local_max
 ```
+
+## Read in gridded monthly mean data for period 1979-2018
 
 
 ```python
@@ -30,6 +34,8 @@ mask = xr.open_dataset('~/DATA/ERAI/erai_invariant.nc').lsm.squeeze()
 da = ds.msl
 ```
 
+## Apply land-sea mask
+
 
 ```python
 da_mask = da.where(mask == 0)
@@ -39,7 +45,7 @@ da_mask.mean().values, da.mean().values # these are different, great!
 
 
 
-    (array(98341.703125), array(107883.921875))
+    (array(64511.23828125), array(42718.0625))
 
 
 
@@ -53,24 +59,28 @@ da = da.sel(latitude=slice(-55,-90))
 plt.figure(figsize=(5,5))
 ax1 = plt.subplot( 121, projection=ccrs.Stereographic(central_longitude=0., central_latitude=-90.) )
 ax1.set_extent([-180,180,-90,-55], ccrs.PlateCarree())
-da.isel(time=0).plot.pcolormesh( 'longitude', 'latitude', cmap='Reds', transform=ccrs.PlateCarree(), add_colorbar=False )
+da.isel(time=0).plot.pcolormesh( 'longitude', 'latitude', cmap='Reds', 
+                                        transform=ccrs.PlateCarree(), add_colorbar=False )
 
 ax2 = plt.subplot( 122, projection=ccrs.Stereographic(central_longitude=0., central_latitude=-90.) )
 ax2.set_extent([-180,180,-90,-55], ccrs.PlateCarree())
-da_mask.isel(time=0).plot.pcolormesh( 'longitude', 'latitude', cmap='Reds', transform=ccrs.PlateCarree(), add_colorbar=False )
+da_mask.isel(time=0).plot.pcolormesh( 'longitude', 'latitude', cmap='Reds', 
+                                        transform=ccrs.PlateCarree(), add_colorbar=False )
 
 ```
 
 
 
 
-    <matplotlib.collections.QuadMesh at 0x7fb163d254a8>
+    <matplotlib.collections.QuadMesh at 0x1c41a8a9e8>
 
 
 
 
-![png](/images/Amundsen_Sea_Low_6_1.png)
+![png](/image/notebooks/Amundsen_Sea_Low/output_8_1.png)
 
+
+## Definitions to identify areas of low pressure
 
 
 ```python
@@ -92,10 +102,15 @@ def sector_mean(da, dict):
     return a
 ```
 
+## Define area we are interested in
+
 
 ```python
 asl_region = {'west':170., 'east':298., 'south':-80., 'north':-60.}
 ```
+
+## Loop through all times and identify lows
+record these data in a Pandas DataFrame
 
 
 ```python
@@ -137,6 +152,8 @@ df['presure']         = presure
 df['ASL_Sector_Pres'] = ASL_Sector_Pres
 
 ```
+
+### show the first 7 rows
 
 
 ```python
@@ -360,11 +377,11 @@ def draw_regional_box( region, transform=None ):
 ```python
 plt.figure(figsize=(20,15))
 
-for i in range(0,25):
+for i in range(0,9):
 
     da_2D = da.isel(time=i)
     
-    ax = plt.subplot( 5,5,i+1, projection=ccrs.Stereographic(central_longitude=0., central_latitude=-90.) )
+    ax = plt.subplot( 3,3,i+1, projection=ccrs.Stereographic(central_longitude=0., central_latitude=-90.) )
 
     ax.set_extent([-180,180,-90,-55], ccrs.PlateCarree())
 
@@ -387,26 +404,12 @@ for i in range(0,25):
     for index, row in df1.iterrows():
         plt.plot(row['lon'], row['lat'], 'b+', transform=ccrs.PlateCarree() )
 
-
-
     draw_regional_box(asl_region)
 
 print('')
 ```
 
-    
 
 
+![png](/image/notebooks/Amundsen_Sea_Low/output_21_1.png)
 
-![png](/images/Amundsen_Sea_Low_15_1.png)
-
-
-
-```python
-
-```
-
-
-```python
-
-```
