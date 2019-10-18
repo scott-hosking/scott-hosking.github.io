@@ -14,7 +14,7 @@ A set of Python tools to make it easier to extract weather station data (e.g., t
 
 More information on the data can be found [here](https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt)
 
-The code can be downloaded from the [_get_station_data_ github repository](https://github.com/scott-hosking/get_station_data)
+The code can be downloaded from the [_get_station_data_](https://github.com/scott-hosking/get_station_data) github repository
 
 
 ```python
