@@ -5,7 +5,10 @@ excerpt: "here are some tools I have built to improve work efficiency"
 toc: True
 ---
 
+Here I have listed some Python tools I have developed to improve research efficiency. Please feel free to get in touch if you have any suggestions, or if you found them useful
+
 ## Get **weather station** data (Global) 
+* Can run from your laptop etc
 * [GitHub repo](https://github.com/scott-hosking/get_station_data)
 * Notebooks for working with [monthly](/notebooks/ghcn_monthly) and [daily](/notebooks/ghcn_daily) averaged data
 
@@ -26,6 +29,7 @@ df = ghcnd.get_data(my_stns)
 ```
 
 ## Get **climate model** output (CMIP5/6)
+* Needs to run on systems where data is stored (e.g. [JASMIN](http://www.jasmin.ac.uk/))
 * [GitHub repo](https://github.com/scott-hosking/baspy)
 
 ```python
