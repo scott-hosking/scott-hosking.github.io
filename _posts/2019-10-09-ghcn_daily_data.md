@@ -587,7 +587,7 @@ df['PRCP'].plot.hist(bins=40)
 
 
 
-![png](/_posts/ghcn_daily/output_14_1.png)
+![png](/images/notebooks/ghcn_daily/output_14_1.png)
 
 
 ### Plot time series for one station
@@ -606,5 +606,5 @@ heathrow['PRCP'].plot()
 
 
 
-![png](/_posts/ghcn_daily/output_16_1.png)
+![png](/images/notebooks/ghcn_daily/output_16_1.png)
 

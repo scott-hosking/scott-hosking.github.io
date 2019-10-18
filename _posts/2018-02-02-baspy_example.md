@@ -306,7 +306,7 @@ da.plot()
 
 
 
-![png](/_posts/baspy_example/output_10_2.png)
+![png](/images/notebooks/baspy_example/output_10_2.png)
 
 
 ### Plot map for first time index
@@ -324,7 +324,7 @@ da.isel(time=0).plot()
 
 
 
-![png](/_posts/baspy_example/output_12_1.png)
+![png](/images/notebooks/baspy_example/output_12_1.png)
 
 
 ### Plot using a polarstereo map projection
@@ -347,5 +347,5 @@ ax.coastlines('110m', color='k')
 
 
 
-![png](/_posts/baspy_example/output_14_1.png)
+![png](/images/notebooks/baspy_example/output_14_1.png)
 
