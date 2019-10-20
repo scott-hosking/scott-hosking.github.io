@@ -1,10 +1,10 @@
 ---
 permalink: /notebooks
-title: "Jupyter Notebooks"
+title: "Python Notebooks"
 excerpt: "A small (but growing) collection of Jupyter notebooks"
 ---
 
-Here I have listed some Python notebooks I use for research and teaching. Please feel free to get in touch if you have any ~~complaints~~ comments - _even if just to say you found these useful_
+Here are some Python notebooks I use for research and teaching. Please feel free to get in touch if you have any comments, _even if just to say you found them useful_
 
 ## Getting started
 * Using [**BASpy** with **Xarray**](/notebooks/baspy_using_xarray) to read in climate model data (CMIP5)

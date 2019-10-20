@@ -11,7 +11,7 @@ tags:
   - rotated grid
 ---
 
-This notebook was written by jointly Scott Hosking and Tony Phillips (BAS)
+This notebook was jointly written by Scott Hosking and Tony Phillips (BAS)
 
 
 ```python
