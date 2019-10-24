@@ -15,4 +15,7 @@ Here are some Python notebooks I use for research and teaching. Please feel free
 * Analysing simulated Antarctic preciptation from the [RACMO regional climate model](/notebooks/racmo_with_xarray)
 * Working with model output from the the [WRF regional climate model](/notebooks/wrf_with_xarray)
 
+# Useful scripts
+* [Smoothing a timeseries](/notebooks/smooth_timeseries.md)
+
 <sub>_I have other notebooks [here](https://nbviewer.jupyter.org/github/scott-hosking/notebooks/tree/master/) which I may or may not migrate over time to this site_</sub>
