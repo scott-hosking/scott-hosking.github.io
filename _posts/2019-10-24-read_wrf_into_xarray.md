@@ -5,10 +5,15 @@ permalink: /notebooks/wrf_with_xarray/
 tags:
   - python
   - xarray
+  - wrf
+  - rcm
 ---
 
-* wrf-python (https://wrf-python.readthedocs.io/en/latest/)
-* Once the WRF data is in an Xarray DataArray there are additional tools you can use to process the data (http://xarray.pydata.org/en/stable/)
+This page demonstrates how you can read in and work with output from the [Weather Research and Forecasting (WRF) model](http://www2.mmm.ucar.edu/wrf/users/)
+
+For more information on the python packages used in this notebook, see:
+* [wrf-python](https://wrf-python.readthedocs.io/en/latest/)
+* Once the WRF data is in an Xarray DataArray there are additional tools you can use to process the data, see [here](http://xarray.pydata.org/en/stable/)
 
 
 ```python

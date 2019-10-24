@@ -9,6 +9,7 @@ tags:
   - racmo
   - precipitation
   - rotated grid
+  - rcm
 ---
 
 This notebook was jointly written by Scott Hosking and Tony Phillips (BAS)

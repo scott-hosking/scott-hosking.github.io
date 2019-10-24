@@ -12,6 +12,7 @@ Here are some Python notebooks I use for research and teaching. Please feel free
 
 ## Research
 * Automatic detection of low pressure systems from pressure or geopotential height fields. Used here in this example to detect the [_Amundsen Sea Low_](/notebooks/asl_detection)
-* Analysing simulated Antarctic preciptation using the [RACMO regional climate model](/notebooks/racmo_with_xarray)
+* Analysing simulated Antarctic preciptation from the [RACMO regional climate model](/notebooks/racmo_with_xarray)
+* Working with model output from the the [WRF regional climate model](/notebooks/wrf_with_xarray)
 
 <sub>_I have other notebooks [here](https://nbviewer.jupyter.org/github/scott-hosking/notebooks/tree/master/) which I may or may not migrate over time to this site_</sub>
