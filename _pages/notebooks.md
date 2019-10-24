@@ -16,6 +16,6 @@ Here are some Python notebooks I use for research and teaching. Please feel free
 * Working with model output from the the [WRF regional climate model](/notebooks/wrf_with_xarray)
 
 ## Useful scripts
-* [Smoothing a timeseries](/notebooks/smooth_timeseries)
+* Smoothing a timeseries [using a low-pass filter](/notebooks/smooth_timeseries)
 
 <sub>_I have other notebooks [here](https://nbviewer.jupyter.org/github/scott-hosking/notebooks/tree/master/) which I may or may not migrate over time to this site_</sub>
