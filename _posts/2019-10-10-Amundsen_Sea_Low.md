@@ -12,6 +12,7 @@ tags:
 This work is a continuation of my 2013 and 2016 papers as described [here](https://legacy.bas.ac.uk/data/absl/)
 
 
+
 ```python
 import xarray as xr
 import numpy as np
@@ -72,7 +73,7 @@ da_mask.isel(time=0).plot.pcolormesh( 'longitude', 'latitude', cmap='Reds',
 
 
 
-    <matplotlib.collections.QuadMesh at 0x1c41a8a9e8>
+    <matplotlib.collections.QuadMesh at 0x1c48375d30>
 
 
 
@@ -84,11 +85,15 @@ da_mask.isel(time=0).plot.pcolormesh( 'longitude', 'latitude', cmap='Reds',
 
 
 ```python
-def get_lows(da):
+def get_lows(da, threshold=None):
     
-    invert_data   = (da*-1.).values                    # search for peaks rather than minima
-    threshold_abs = np.percentile(invert_data,50)      # define threshold cut-off for peaks (inverted lows)
+    invert_data = (da*-1.).values     # search for peaks rather than minima
     
+    if threshold is None:
+        threshold_abs = invert_data.mean()
+    else:
+        threshold_abs  = threshold * -1  # define threshold cut-off for peaks (inverted lows)
+                
     minima_yx = peak_local_max(invert_data,            # input data
                            min_distance=4,             # peaks are separated by at least min_distance
                            num_peaks=6,                # maximum number of peaks
@@ -97,9 +102,58 @@ def get_lows(da):
                            )
     return minima_yx
 
+
+
 def sector_mean(da, dict):
-    a = da.sel( latitude=slice(asl_region['north'],asl_region['south']), longitude=slice(asl_region['west'],asl_region['east']) ).mean()
+    a = da.sel( latitude=slice(asl_region['north'],asl_region['south']), 
+                longitude=slice(asl_region['west'],asl_region['east']) ).mean()
     return a
+
+
+
+def get_asl(da, region, mask):
+    '''
+    da for one point in time (with lats x lons)
+    '''
+    
+    lons, lats = da.longitude.values, da.latitude.values
+    
+    threshold = da.sel( latitude=slice(region['north'], region['south']), 
+                        longitude=slice(region['west'], region['east']) ).mean().values
+
+    time_str = str(da.time.values)
+    sec_pres = sector_mean(da.where(mask == 0), region).values
+    
+    # fill land in with highest value to limit lows being found here
+    da_max   = da.max().values
+    da       = da.where(mask == 0).fillna(da_max)
+    
+    ### get lows for entire domain
+    minima_yx = get_lows(da, threshold)
+    
+    minima_lat, minima_lon, pressure = [], [], []
+    for minima in minima_yx:
+        minima_lat.append(lats[minima[0]])
+        minima_lon.append(lons[minima[1]])
+        pressure.append(da.values[minima[0],minima[1]])
+    
+    df = pd.DataFrame()
+    df['lat']      = minima_lat
+    df['lon']      = minima_lon
+    df['pressure'] = pressure
+    df['ASL_Sector_Pres'] = sec_pres
+    df['time']     = time_str
+    
+    ### select only those points within ASL box
+    asl_df = df[(df['lon'] > region['west'])  & 
+                (df['lon'] < region['east'])  & 
+                (df['lat'] > region['south']) & 
+                (df['lat'] < region['north']) ]
+
+    ### For each time, get the row with the lowest minima_number
+    asl_df = asl_df.loc[asl_df.groupby('time')['pressure'].idxmin()]
+    
+    return asl_df
 ```
 
 ## Define area we are interested in
@@ -115,49 +169,20 @@ record these data in a Pandas DataFrame
 
 ```python
 ntime      = da.time.shape[0]
-lons, lats = da.longitude.values, da.latitude.values
 
-time_arr   = np.array([])
-minima_num = np.array([])
-minima_lat = np.array([])
-minima_lon = np.array([])
-presure    = np.array([])
-ASL_Sector_Pres = np.array([]) # this should be weighted mean !!
+all_lows_df = pd.DataFrame()
+asl_df      = pd.DataFrame()
 
 for t in range(0,ntime):
-
-    da_t = da.isel(time=t)
-    
-    minima_yx = get_lows(da_t)
-
-    ### used masked array
-    sec_pres = sector_mean(da_t.where(mask == 0),asl_region).values
-    
-    for i, minima in enumerate(minima_yx):
-        time_arr   = np.append(time_arr,   str(da_t.time.values))
-        minima_num = np.append(minima_num, i+1)
-        minima_lat = np.append(minima_lat, lats[minima[0]])
-        minima_lon = np.append(minima_lon, lons[minima[1]])
-        presure    = np.append(presure, da_t.values[minima[0],minima[1]] / 100.)
-        ASL_Sector_Pres = np.append(ASL_Sector_Pres, sec_pres / 100.)
-        
-
-### Create DataFrame
-df                    = pd.DataFrame([])
-df['time']            = time_arr
-df['minima_number']   = minima_num.astype(int)
-df['lat']             = minima_lat
-df['lon']             = minima_lon
-df['presure']         = presure
-df['ASL_Sector_Pres'] = ASL_Sector_Pres
-
+    da_t   = da.isel(time=t) / 100.
+    asl_df = pd.concat([asl_df, get_asl(da_t, asl_region, mask)]).reset_index(drop=True)
 ```
 
-### show the first 7 rows
+### Show the first 7 rows
 
 
 ```python
-df.iloc[0:7]
+asl_df.iloc[0:7]
 ```
 
 
@@ -181,171 +206,69 @@ df.iloc[0:7]
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>time</th>
-      <th>minima_number</th>
       <th>lat</th>
       <th>lon</th>
-      <th>presure</th>
+      <th>pressure</th>
       <th>ASL_Sector_Pres</th>
+      <th>time</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
+      <td>-69.75</td>
+      <td>219.00</td>
+      <td>982.376343</td>
+      <td>986.091736</td>
       <td>1979-01-01T00:00:00.000000000</td>
-      <td>1</td>
-      <td>-63.75</td>
-      <td>155.25</td>
-      <td>980.693906</td>
-      <td>986.090859</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1979-01-01T00:00:00.000000000</td>
-      <td>2</td>
-      <td>-60.75</td>
-      <td>33.00</td>
-      <td>981.350781</td>
-      <td>986.090859</td>
+      <td>-71.25</td>
+      <td>196.50</td>
+      <td>973.704346</td>
+      <td>982.958923</td>
+      <td>1979-02-01T00:00:00.000000000</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1979-01-01T00:00:00.000000000</td>
-      <td>3</td>
-      <td>-62.25</td>
-      <td>50.25</td>
-      <td>981.380391</td>
-      <td>986.090859</td>
+      <td>-69.75</td>
+      <td>225.00</td>
+      <td>972.301636</td>
+      <td>980.515076</td>
+      <td>1979-03-01T00:00:00.000000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1979-01-01T00:00:00.000000000</td>
-      <td>4</td>
-      <td>-69.75</td>
-      <td>219.00</td>
-      <td>982.376328</td>
-      <td>986.090859</td>
+      <td>-68.25</td>
+      <td>273.75</td>
+      <td>967.706482</td>
+      <td>979.388428</td>
+      <td>1979-04-01T00:00:00.000000000</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>1979-01-01T00:00:00.000000000</td>
-      <td>5</td>
-      <td>-69.00</td>
-      <td>264.75</td>
-      <td>983.139063</td>
-      <td>986.090859</td>
+      <td>-70.50</td>
+      <td>191.25</td>
+      <td>977.467529</td>
+      <td>987.170654</td>
+      <td>1979-05-01T00:00:00.000000000</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>1979-01-01T00:00:00.000000000</td>
-      <td>6</td>
-      <td>-61.50</td>
-      <td>200.25</td>
-      <td>983.836953</td>
-      <td>986.090859</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>1979-02-01T00:00:00.000000000</td>
-      <td>1</td>
-      <td>-71.25</td>
-      <td>196.50</td>
-      <td>973.704375</td>
-      <td>982.956484</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-# Select ASL from amongst all Southern Ocean lows 
-- i.e., lowest within box at each time step
-
-
-```python
-print(df['lon'].min(), df['lon'].max(), df['lat'].min(), df['lat'].max())
-
-### select only those points within ASL box
-asl_df = df[(df['lon'] > asl_region['west']) & 
-            (df['lon'] < asl_region['east']) & 
-            (df['lat'] > asl_region['south']) & 
-            (df['lat'] < asl_region['north']) ]
-
-### For each time, get the row with the lowest minima_number
-asl_df = asl_df.loc[asl_df.groupby('time')['minima_number'].idxmin()]
-
-asl_df.iloc[0:4]
-```
-
-    3.0 356.25 -85.5 -58.5
-
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>time</th>
-      <th>minima_number</th>
-      <th>lat</th>
-      <th>lon</th>
-      <th>presure</th>
-      <th>ASL_Sector_Pres</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>3</th>
-      <td>1979-01-01T00:00:00.000000000</td>
-      <td>4</td>
-      <td>-69.75</td>
+      <td>-70.50</td>
       <td>219.00</td>
-      <td>982.376328</td>
-      <td>986.090859</td>
+      <td>966.901245</td>
+      <td>977.857605</td>
+      <td>1979-06-01T00:00:00.000000000</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>1979-02-01T00:00:00.000000000</td>
-      <td>1</td>
       <td>-71.25</td>
-      <td>196.50</td>
-      <td>973.704375</td>
-      <td>982.956484</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>1979-03-01T00:00:00.000000000</td>
-      <td>2</td>
-      <td>-69.75</td>
-      <td>225.00</td>
-      <td>972.301641</td>
-      <td>980.515234</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>1979-04-01T00:00:00.000000000</td>
-      <td>1</td>
-      <td>-68.25</td>
-      <td>273.75</td>
-      <td>967.706484</td>
-      <td>979.388359</td>
+      <td>249.75</td>
+      <td>972.692871</td>
+      <td>980.135132</td>
+      <td>1979-07-01T00:00:00.000000000</td>
     </tr>
   </tbody>
 </table>
@@ -366,8 +289,11 @@ def draw_regional_box( region, transform=None ):
     if transform == None:
         transform = ccrs.PlateCarree()
 
-    plt.plot([region['west'], region['west']], [region['south'],region['north']], 'k-', transform=transform, linewidth=1)
-    plt.plot([region['east'], region['east']], [region['south'],region['north']], 'k-', transform=transform, linewidth=1)
+    plt.plot([region['west'], region['west']], [region['south'],region['north']], 
+                 'k-', transform=transform, linewidth=1)
+    plt.plot([region['east'], region['east']], [region['south'],region['north']], 
+                 'k-', transform=transform, linewidth=1)
+    
     for i in range( np.int(region['west']),np.int(region['east']) ): 
         plt.plot([i,i+1], [region['south'],region['south']], 'k-', transform=transform, linewidth=1)
         plt.plot([i,i+1], [region['north'],region['north']], 'k-', transform=transform, linewidth=1)
@@ -381,35 +307,32 @@ for i in range(0,9):
 
     da_2D = da.isel(time=i)
     
-    ax = plt.subplot( 3,3,i+1, projection=ccrs.Stereographic(central_longitude=0., central_latitude=-90.) )
+    ax = plt.subplot( 3,3,i+1, 
+                        projection=ccrs.Stereographic(central_longitude=0., 
+                                                      central_latitude=-90.) )
 
     ax.set_extent([-180,180,-90,-55], ccrs.PlateCarree())
 
-    result = da_2D.plot.pcolormesh( 'longitude', 'latitude', cmap='Reds', transform=ccrs.PlateCarree(), add_colorbar=False )
+    result = da_2D.plot.pcolormesh( 'longitude', 'latitude', cmap='Reds', 
+                                    transform=ccrs.PlateCarree(), 
+                                    add_colorbar=False )
 
-    # ax.coastlines(resolution='50m')
     ax.coastlines(resolution='110m')
-
-    # plt.colorbar(result, orientation='horizontal', label=da.units, extend='both', fraction=0.046, pad=0.04)
-
-    # ax.set_title(da.long_name+'\n', size='xx-large')
     ax.set_title('time='+str(i))
     
     ### mark ASL
     df2 = asl_df[ asl_df['time'] == str(da_2D.time.values)]
     plt.plot(df2['lon'], df2['lat'], 'mx', transform=ccrs.PlateCarree() )
 
-    ### mark all lows
-    df1 = df[ df['time'] == str(da_2D.time.values)]
-    for index, row in df1.iterrows():
-        plt.plot(row['lon'], row['lat'], 'b+', transform=ccrs.PlateCarree() )
-
     draw_regional_box(asl_region)
 
 print('')
 ```
 
+    
 
 
-![png](/images/notebooks/Amundsen_Sea_Low/output_21_1.png)
+
+![png](/images/notebooks/Amundsen_Sea_Low/output_19_1.png)
+
 
