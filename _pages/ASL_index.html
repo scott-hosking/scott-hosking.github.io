@@ -23,7 +23,7 @@ the ASL are crucial for understanding regional change.
 Furthermore, the <i>state-of-the-art</i> climate models which best simulate 
 the ASL produce a better representation of the regional surface climate.
 
-<br>
+<br><br>
 <i><sub>* In 
 <a href="http://journals.ametsoc.org/doi/abs/10.1175/JCLI-D-12-00813.1">Hosking et 
 	al. (2013)</a> we used the term Amundsen-Bellingshausen Seas Low (ABSL).  
@@ -36,23 +36,22 @@ the ASL produce a better representation of the regional surface climate.
 <p>
 <img src="/images/asl_index/asliv2_Long_monthly_ts.png" 
 alt="Amundsen Sea Low (ASL) longitude monthly time-series" width="300" align="right">
-Following <a href="http://journals.ametsoc.org/doi/abs/10.1175/JCLI-D-12-00813.1">Hosking et al. 
-(2013)</a>, an updated set of indices were developed which includes a more robust way to identify 
-the ASL from mean sea level pressure gridded data
-(see <a href="http://dx.doi.org/10.1002/2015GL067143">Hosking et al., 2016</a> for 
-more details).</p>  
+The ASL indices are defined as follows:</p>  
 
 <p>The ASL latitude and longitude are identified 
 using a minima finding algorithm within the ASL sector (170°—298° E, 80°—60° S). 
-This dataset is derived using monthly ERA5 data and follows the same methodology as that used in 
+This dataset is derived using monthly ERA5 mean sea level pressure data and follows 
+a similar methodology as that used in 
 <a target="_blank" href="http://dx.doi.org/10.1002/2015GL067143">Hosking et al (2016)</a>
-although is now re-written in python (see 
+(see 
 <a href="https://scott-hosking.github.io/notebooks/asl_detection/">notebook</a>).</p>
 
 <p>The <b>ASL Actual Central Pressure Index</b> is simply defined as the
 pressure at the ASL location.  Note that the ASL actual central 
 pressure is strongly modulated by the Southern-Hemisphere Annual Mode 
-(SAM) across all seasons, with time series correlations significant at <i>p</i>&lt;0.01.  
+(SAM) across all seasons, with time series correlations significant at <i>p</i>&lt;0.01 
+(<a href="http://journals.ametsoc.org/doi/abs/10.1175/JCLI-D-12-00813.1">Hosking et 
+	al., 2013</a>).  
 For this reason we derive an alternative measure called the "Relative Central Pressure".</p>
 
 <p>The <b>ASL Relative Central Pressure</b> is essentially a regional 
@@ -70,18 +69,28 @@ monthly indices.</p>  -->
 <p>ASL indices derived from <u>monthly ERA5</u> reanalysis data
 <ul>
 <li>Data (
-	<a href="https://github.com/scott-hosking/amundsen_sea_low_index/raw/master/asli_v3_era5/asli_v3_era5.csv">csv</a>,
-	<a href="https://github.com/scott-hosking/amundsen_sea_low_index/blob/master/asli_v3_era5/asli_v3_era5.csv">view on GitHub</a>
-	)</li>
-<li>Images (
-	<a href="https://github.com/scott-hosking/amundsen_sea_low_index/raw/master/asli_v3_era5/asli_v3_era5.pdf">pdf</a>,
-	<a href="https://github.com/scott-hosking/amundsen_sea_low_index/blob/master/asli_v3_era5/asli_v3_era5.pdf">view on GitHub</a>
-	)</li>
+<a href="https://github.com/scott-hosking/amundsen_sea_low_index/raw/master/asli_v3_era5/asli_v3_era5.csv">csv</a>,
+<a href="https://github.com/scott-hosking/amundsen_sea_low_index/blob/master/asli_v3_era5/asli_v3_era5.csv">view on GitHub</a>
+)</li>
+<li>Pressure map images with ASL locations (
+<a href="https://github.com/scott-hosking/amundsen_sea_low_index/raw/master/asli_v3_era5/asli_v3_era5.pdf">pdf</a>,
+<a href="https://github.com/scott-hosking/amundsen_sea_low_index/blob/master/asli_v3_era5/asli_v3_era5.pdf">view on GitHub</a>
+)</li>
 </ul>
 </p>
 
+<p>These indices are defined using an ASL detection methodology very similar to that described in
+	<a href="http://dx.doi.org/10.1002/2015GL067143">Hosking et al. (2016)</a>
+	although (rather than IDL) is now re-writen in 
+	<a href="https://scott-hosking.github.io/notebooks/asl_detection/">Python</a>. 
+	This methodology is therefore now known as 'version 3' (v3) as it is non-identical 
+	to the previous one (version 2, v2).  
+	Versions 1 and 2 of the ASL indices 
+	(<i>which were in any case based on ERA-Interim reanalysis data instead of ERA5</i>) 
+	can be found 
+	<a href="https://legacy.bas.ac.uk/data/absl/index2.html">on our old 'legacy' webpage</a>.</p>
 
-<p>Citation:</p>
+<p><u>Citation:</u></p>
 <p style="margin-left: 20px">Hosking, J.&nbsp;S., Orr, A., Bracegirdle, T.&nbsp;J., Turner, J. (2016).
 <b>Future circulation changes off West Antarctica: Sensitivity of the Amundsen Sea Low to projected anthropogenic forcing.</b>.
 <em>Geophysical Research Letters</em>, 43,
