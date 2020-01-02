@@ -8,7 +8,7 @@ last_modified_at: 2019-12-20
 <p>
 <img src="/images/asl_index/asl_index-v2_region.png" 
 alt="Amundsen Sea Low (ASL)" width="200" align="right">Over
- the last 50 years West Antarctica has experienced one of the largest 
+the last 50 years West Antarctica has experienced one of the largest 
 increases in regional temperature on Earth. Observed spatial trend 
 patterns in surface temperature and sea ice extent indicate that these 
 are likely linked to changes in the Amundsen Seas Low (ASL): a highly 
@@ -16,39 +16,37 @@ dynamic and mobile climatological low pressure system located in the
 Pacific sector of the Southern Ocean. In this sector, variability in 
 sea-level pressure is greater than anywhere in the Southern Hemisphere 
 making it challenging to isolate local fluctuations in the ASL from 
-larger-scale shifts in atmospheric pressure. BAS scientists have 
-demonstrated that the position and strength of the ASL are crucial for 
-understanding regional change 
-(<a href="http://journals.ametsoc.org/doi/abs/10.1175/JCLI-D-12-00813.1">Hosking et 
-	al., 2013</a>).
- Furthermore, the state-of-the-art climate models which best simulate 
+larger-scale shifts in atmospheric pressure. 
+In <a href="http://journals.ametsoc.org/doi/abs/10.1175/JCLI-D-12-00813.1">Hosking et 
+al., 2013</a><sup>*</sup> we demonstrated that the position and strength of 
+the ASL are crucial for understanding regional change. 
+Furthermore, the <i>state-of-the-art</i> climate models which best simulate 
 the ASL produce a better representation of the regional surface climate.
- As a major driver of West Antarctic climate variability, identifying 
-the spread of ASL realisations across all the climate models is 
-fundamental for reducing uncertainties in West Antarctica's past and 
-improving predictions of future change 
-(<a href="http://dx.doi.org/10.1002/2015GL067143">Hosking et al., 2016</a>).
 
-<p><b>ABSL / ASL</b> In 
+<sub>* In 
 <a href="http://journals.ametsoc.org/doi/abs/10.1175/JCLI-D-12-00813.1">Hosking et 
 	al. (2013)</a> we used the term Amundsen-Bellingshausen Seas Low (ABSL).  
 	However, following a dedicated 
 	<a href="http://www.climate-cryosphere.org/wcrp/pcpi/meetings/764-amundsen-sea-low-workshop-for-pcpi-initiative">ASL 
-		workshop</a>, the term Amundsen Sea Low (ASL) is now used for our more recent publications.</p>
+		workshop</a>, the term Amundsen Sea Low (ASL) is now used for our more recent publications.</sub>
 
 <h2>ASL Indices</h2>
 
 <p>
 <img src="/images/asl_index/asliv2_Long_monthly_ts.png" 
 alt="Amundsen Sea Low (ASL) longitude monthly time-series" width="300" align="right">
-<a href="http://journals.ametsoc.org/doi/abs/10.1175/JCLI-D-12-00813.1">Hosking et al. 
-(2013)</a>
-found that the location of the ASL is an important driver of climate 
-variability over West Antarctica.  Following this study, an updated set 
-of indices were developed which includes a more robust way to identify 
-the <b>ASL latitude and longitude</b> 
+Following <a href="http://journals.ametsoc.org/doi/abs/10.1175/JCLI-D-12-00813.1">Hosking et al. 
+(2013)</a>, an updated set of indices were developed which includes a more robust way to identify 
+the <b>ASL</b> 
 (see <a href="http://dx.doi.org/10.1002/2015GL067143">Hosking et al., 2016</a> for 
 more details).</p>  
+
+<p>The ASL latitude and longitude are identified 
+using a minima finding algorithm within the ASL sector (170°—298° E, 80°—60° S). 
+This dataset is derived using monthly ERA5 data and follows the same methodology as that used in 
+<a target="_blank" href="http://dx.doi.org/10.1002/2015GL067143">Hosking et al (2016)</a>
+although is now re-written in python (see 
+<a href="https://scott-hosking.github.io/notebooks/asl_detection/">notebook</a>).</p>
 
 <p>The <b>ASL Actual Central Pressure Index</b> is simply defined as the
 pressure at the ASL location.  Note that the ASL actual central 
@@ -59,21 +57,14 @@ For this reason we derive an alternative measure called the "Relative Central Pr
 <p>The <b>ASL Relative Central Pressure</b> is essentially a regional 
 pressure anomaly.  It is calculated by subtracting the ASL actual 
 central pressure from the area-averaged pressure over the ASL domain 
-(domains are specified below).</p> 
+(domain specified above).</p> 
 
 <!-- <p>Note that the seasonal and annual indices are computed from their 
 respective temporally averaged two-dimensional surface pressure fields. 
  They are not the average of the three (or twelve) points from the 
 monthly indices.</p>  -->
 
-<h3>Download</h3>
-
-<p>The ASL latitude and longitude are identified 
-using a minima finding algorithm within the ASL sector (170°—298° E, 80°—60° S). 
-This dataset is derived using monthly ERA5 data and follows the same methodology as that used in 
-<a target="_blank" href="http://dx.doi.org/10.1002/2015GL067143">Hosking et al (2016)</a>
-but now re-written in python (see 
-<a href="https://scott-hosking.github.io/notebooks/asl_detection/">notebook</a>).</p>
+<h3>Download Data</h3>
 
 <p></p>
 Monthly ASL indices derived from ERA5 mean sea level pressure data:   
