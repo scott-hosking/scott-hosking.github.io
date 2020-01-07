@@ -61,19 +61,19 @@ respective temporally averaged two-dimensional surface pressure fields.
  They are not the average of the three (or twelve) points from the 
 monthly indices.</p>  -->
 
-<h3>Data</h3>
+<h3><a id="Data"></a>Data</h3>
 
 <p>ASL indices derived from <u>monthly ERA5</u> reanalysis data
 <ul>
 <li>Data (<a href="https://github.com/scott-hosking/amundsen_sea_low_index/raw/master/asli_era5_v3-latest.csv">csv</a>)</li>
-<li>Pressure map images with ASL locations (<a href="https://github.com/scott-hosking/amundsen_sea_low_index/blob/master/asli_era5_v3-latest.pdf">pdf via GitHub</a>)</li>
-<li>Timeseries plot (<a href="https://github.com/scott-hosking/amundsen_sea_low_index/raw/master/asli_era5_v3_monthly_timeseries.png">png</a>)</li>
+<li>Pressure maps with ASL locations (<a href="https://github.com/scott-hosking/amundsen_sea_low_index/blob/master/asli_era5_v3-latest.pdf">view pdf via GitHub</a>)</li>
+<li>Timeseries (<a href="https://github.com/scott-hosking/amundsen_sea_low_index/raw/master/asli_era5_v3_monthly_timeseries.png">png</a>)</li>
 </ul>
 </p>
 
 <p>These indices are defined using an ASL detection methodology very similar to that described in
 	<a href="http://dx.doi.org/10.1002/2015GL067143">Hosking et al. (2016)</a>
-	although (rather than IDL) it is now written in Python (<a href="https://scott-hosking.github.io/notebooks/asl_detection/">see notebook</a>). 
+	although (rather than IDL) it is now written in Python. 
 	Therefore, this methodology and any associcated indices/derived data will be henceforth referred 
 	to as 'version 3' (or 'v3') 
 	as the method is <i>non-identical</i> to the previous one (version 2).  
@@ -81,6 +81,10 @@ monthly indices.</p>  -->
 	(<i>which were in any case derived on ERA-Interim reanalysis data, and not ERA5</i>) 
 	can be found on our
 	<a href="https://legacy.bas.ac.uk/data/absl/index2.html">legacy webpage</a>.</p>
+
+<p>We have made a python 
+	<a href="https://github.com/scott-hosking/amundsen_sea_low_index/blob/master/v3/compare_asl_indices.ipynb">notebook</a>
+	to demonstrate how similar v2 and v3 are using ERA-Interim input data.</p>
 
 <p><u>Citation:</u></p>
 <p style="margin-left: 20px">Hosking, J.&nbsp;S., Orr, A., Bracegirdle, T.&nbsp;J., Turner, J. (2016).
