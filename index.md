@@ -30,9 +30,3 @@ I have secured over **£6 million** for BAS as Principal-Investigator and Co-Inv
 * Deputy Chair - [Cambridge Earth System Science DTP](http://essdtp.esc.cam.ac.uk/), 2017-18 
 * Secretary - [Global Environmental Research Committee](https://royalsociety.org/topics-policy/energy-environment-climate/global-environmental-research-committee/), The Royal Society, 2016-2017
 * Lecturer, Polar Science coordinator — Earth System Science Spring School , 2010-2014
-* Project Supervisor - NCAS Climate Modelling Summer School , 2015
-* Co-convener - International Union of Geodesy and Geophysics (IUGG), 2015
-* Editor - International Association of Meteorology and Atmospheric Sciences newsletter, 2012
-* Expert reviewer - ERC Starting Grant FP7 Programme, 2011
-* Examiner - PhD Applied Mathematics, 1st year report (Cambridge University, July 2016)
-* Examiner - MSc Environmental Science, final report (Lancaster University, March 2016)
