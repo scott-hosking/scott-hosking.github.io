@@ -6,7 +6,7 @@ layout: single
 author_profile: true
 ---
 
-I am an _Environmental Data Scientist_ and the **Head of the [AI Lab**](http://www.bas.ac.uk/ai) at the British Antarctic Survey ([BAS](http://www.bas.ac.uk)).  My research involves the application of new Artificial Intelligence (AI) and machine learning techniques to help drive environmental policy. 
+I am an _Environmental Data Scientist_ and the _Head of the_ [_AI Lab_](http://www.bas.ac.uk/ai) at the British Antarctic Survey ([BAS](http://www.bas.ac.uk)).  My research involves the application of new Artificial Intelligence (AI) and machine learning techniques to help drive environmental policy. 
 
 I am a Principle Investigator (PI) and Co-Invesigator (Co-I) on numerous [funded projects](/projects), bringing in a total of £6m to BAS. I am also the developer and maintainer of the [Amundsen Sea Low indices](/asl_index).
 
@@ -25,7 +25,7 @@ I am a Principle Investigator (PI) and Co-Invesigator (Co-I) on numerous [funded
 <sub>_Members of my research group are listed on my [BAS web profile](https://www.bas.ac.uk/profile/jask/)_</sub>
 
 # Previous appointments
-* Deputy Chair — [Cambridge Earth System Science DTP](http://essdtp.esc.cam.ac.uk/), 2017-18 
+* Deputy Chair - [Cambridge Earth System Science DTP](http://essdtp.esc.cam.ac.uk/), 2017-18 
 * Secretary - [Global Environmental Research Committee](https://royalsociety.org/topics-policy/energy-environment-climate/global-environmental-research-committee/), The Royal Society, 2016-2017
 * Lecturer, Polar Science coordinator — Earth System Science Spring School , 2010-2014
 * Project Supervisor - NCAS Climate Modelling Summer School , 2015
