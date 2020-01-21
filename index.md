@@ -6,12 +6,15 @@ layout: single
 author_profile: true
 ---
 
-I am an _Environmental Data Scientist_ and the _Head of the_ [_AI Lab_](http://www.bas.ac.uk/ai) at the British Antarctic Survey ([BAS](http://www.bas.ac.uk)).  My research involves the application of new Artificial Intelligence (AI) and machine learning techniques to help drive environmental policy. 
+I am an _Environmental Data Scientist_ at the British Antarctic Survey ([BAS](http://www.bas.ac.uk)). My research involves the application of AI and machine learning techniques on vast and various datasets, including the output from global climate models and weather stations.  The primary aims of my work is to identify and understand the key mechanisms that drive year-to-year climate variability over vulnerable regions, the changes in frequency and strength of extreme weather events, and to reduce uncertainties in future climate predictions to help drive environmental policy. 
 
-I am a Principle Investigator (PI) and Co-Invesigator (Co-I) on numerous [funded projects](/projects), bringing in a total of £6m to BAS. I am also the developer and maintainer of the [Amundsen Sea Low indices](/asl_index).
+I am the _Head of the_ [_AI Lab_](http://www.bas.ac.uk/ai), and a **Co-Director** of the Centre for Doctoral Training (CDT) in the _Application of AI for the study of Environmental Risks_ ([AI4ER](https://ai4er-cdt.esc.cam.ac.uk/)), hosted at the University of Cambridge. 
 
-## Current positions
-* **Co-Director** of the Centre for Doctoral Training (CDT) in the _Application of AI for the study of Environmental Risks_ ([AI4ER](https://ai4er-cdt.esc.cam.ac.uk/)), University of Cambridge
+I am the Principle Investigator (PI) and Co-Invesigator (Co-I) on numerous [funded projects](/projects), bringing in a total of £6m to BAS. 
+
+I am also the developer and maintainer of the [Amundsen Sea Low indices](/asl_index).
+
+## Other Current positions
 * **Board member** of the _Cambridge Centre for Climate Science_ ([CCfCS](https://www.climatescience.cam.ac.uk/)), University of Cambridge
 * **Member** of the _Centre for Science and Policy_ [CSaP network](http://www.csap.cam.ac.uk/about-csap/people/our-network/), University of Cambridge
 * **Committee Member** for the _International Commission on Polar Meteorology_ ([ICPM](http://www.icpm-iamas.aq/))
