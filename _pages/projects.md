@@ -4,6 +4,8 @@ title: "Projects"
 excerpt: "Projects"
 ---
 
+I have secured over £6m for BAS; as Principal-Investigator and Co-Investigator on numerous grants.
+
 * [Peruvian Glacier Retreat and its Impact on Water Security](https://gtr.ukri.org/projects?ref=NE%2FS013296%2F1) (Peru GROWS), NERC - Newton-Paulet Fund, 2019-2022
 * [Understanding Arctic sea ice loss](https://www.turing.ac.uk/research/research-projects/understanding-arctic-sea-ice-loss), Alan Turing Institute, 2019-2021
 * [Improving tracking of iceberg populations in the Southern Ocean](https://www.turing.ac.uk/research/research-projects/improving-tracking-iceberg-populations-southern-ocean), Alan Turing Institute, 2019-2021
