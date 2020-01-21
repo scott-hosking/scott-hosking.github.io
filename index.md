@@ -8,9 +8,9 @@ author_profile: true
 
 I am an _Environmental Data Scientist_ at the British Antarctic Survey ([BAS](http://www.bas.ac.uk)). My research involves the application of AI and machine learning techniques on vast and various datasets, including the output from global climate models and weather stations.  The primary aims of my work is to identify and understand the key mechanisms that drive year-to-year climate variability over vulnerable regions, the changes in frequency and strength of extreme weather events, and to reduce uncertainties in future climate predictions to help drive environmental policy. 
 
-I am the _Head of the_ [_AI Lab_](http://www.bas.ac.uk/ai), and a **Co-Director** of the Centre for Doctoral Training (CDT) in the _Application of AI for the study of Environmental Risks_ ([AI4ER](https://ai4er-cdt.esc.cam.ac.uk/)), hosted at the University of Cambridge. 
+I am the **Head** of the [_AI Lab_](http://www.bas.ac.uk/ai), and a **Co-Director** of the Centre for Doctoral Training (CDT) in the _Application of AI for the study of Environmental Risks_ ([AI4ER](https://ai4er-cdt.esc.cam.ac.uk/)), hosted at the University of Cambridge. 
 
-I am the Principle Investigator (PI) and Co-Invesigator (Co-I) on numerous [funded projects](/projects), bringing in a total of £6m to BAS. 
+I am the Principle Investigator (PI) and Co-Invesigator (Co-I) on numerous [funded projects](/projects), bringing in a total of **£6 million** to BAS. 
 
 I am also the developer and maintainer of the [Amundsen Sea Low indices](/asl_index).
 
@@ -23,7 +23,7 @@ I am also the developer and maintainer of the [Amundsen Sea Low indices](/asl_in
 ## Supervision and management
 * Line Manager to 5 staff members, BAS & University of Cambridge (2015-)
 * PhD Supervisor to 6 students with Universities of Cambridge, Lancaster, Sheffield (2014-)
-* MEng / MRes Supervisor to 5 students with University of Cambridge (2019-)
+* MEng / MRes Supervisor to 5 students with University of Cambridge (2018-)
 
 <sub>_Members of my research group are listed on my [BAS web profile](https://www.bas.ac.uk/profile/jask/)_</sub>
 
