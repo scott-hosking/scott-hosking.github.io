@@ -10,7 +10,7 @@ I am an _Environmental Data Scientist_ at the British Antarctic Survey ([BAS](ht
 
 I am the **Head** of the [_BAS AI Lab_](http://www.bas.ac.uk/ai), and a **Co-Director** of the Centre for Doctoral Training (CDT) in the _Application of AI for the study of Environmental Risks_ ([_AI4ER_](https://ai4er-cdt.esc.cam.ac.uk/)) which is jointly led with the University of Cambridge. 
 
-I have secured over **£6 million** for BAS as Principal-Investigator and Co-Investigator on numerous [funded projects](/projects).
+I have secured over **£6 million** for BAS as Principal-Investigator and Co-Investigator on numerous [projects](/projects).
 
 I am also the developer and maintainer of the [Amundsen Sea Low indices](/asl_index).
 
