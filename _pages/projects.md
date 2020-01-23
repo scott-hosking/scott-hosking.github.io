@@ -13,5 +13,4 @@ I have secured over £6m for BAS, as Principal-Investigator and Co-Investigator 
 * [Future Water Security for communities reliant on the Upper Indus, Himalayas](https://gtr.ukri.org/projects?ref=NE%2FR000107%2F1), NERC, 2017-2020
 * [The North Atlantic Climate System Integrated Study (ACSIS)](https://gtr.ukri.org/projects?ref=NE%2FN018028%2F1), NERC, 2016-2021
 * [Ice shelves in a warming world: Filchner Ice Shelf system, Antarctica (FISS)](https://gtr.ukri.org/projects?ref=NE%2FL013770%2F1), NERC, 2015-2020
-* [AI for megacities: Understanding the impact of climate extremes](https://gtr.ukri.org/projects?ref=studentship-2083498), NERC PhD Studentship, 2018-2022
 * Climate risk assessment of supply chains to support resilience-building, EPSRC Institutional Grant (Led by Cambridge University), 2016-2017
