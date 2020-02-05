@@ -6,9 +6,9 @@ main:
     url: /publications
   # - title: "Projects"
   #   url: /projects
-  - title: "Notebooks"
-    url: /notebooks
-  - title: "Code:Tools"
+  # - title: "Notebooks"
+  #   url: /notebooks
+  - title: "Code"
     url: /code
   # - title: "Sample Posts"
   #   url: /year-archive/
