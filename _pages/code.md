@@ -1,7 +1,7 @@
 ---
 permalink: /code
 title: "Code"
-excerpt: "here are some tools I have built to improve work efficiency"
+excerpt: "code, tools and jupyter notebooks"
 toc: True
 ---
 
