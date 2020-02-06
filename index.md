@@ -13,11 +13,11 @@ I am the **Head** of the [_BAS AI Lab_](http://www.bas.ac.uk/ai), and a **Co-Dir
 I have secured over **£6 million** for BAS as Principal-Investigator and Co-Investigator on numerous [projects](/projects).
 
 ## Also...
-* Developer of the [Amundsen Sea Low indices](/asl_index)
 * Board member of the _Cambridge Centre for Climate Science_ ([CCfCS](https://www.climatescience.cam.ac.uk/)), University of Cambridge
 * Member of the _Centre for Science and Policy_ [CSaP network](http://www.csap.cam.ac.uk/about-csap/people/our-network/), University of Cambridge
 * Committee Member for the _International Commission on Polar Meteorology_ ([ICPM](http://www.icpm-iamas.aq/))
 * Associate Fellow of the _Royal Meteorological Society_ ([RMetS](https://www.rmets.org/))
+* Creator of the [Amundsen Sea Low indices](/asl_index)
 
 ## Supervision and management
 * Line Manager to 5 staff members, BAS & University of Cambridge (2015-)
