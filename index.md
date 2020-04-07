@@ -13,6 +13,7 @@ I am the **Head** of the [_BAS AI Lab_](http://www.bas.ac.uk/ai), and a **Co-Dir
 I have secured over **£6 million** for BAS as Principal-Investigator and Co-Investigator on numerous [projects](/projects).
 
 ## Also...
+* Chair of the [AI4ER CDT](https://ai4er-cdt.esc.cam.ac.uk/) Research Committee
 * Board member of the _Cambridge Centre for Climate Science_ ([CCfCS](https://www.climatescience.cam.ac.uk/)), University of Cambridge
 * Member of the _Centre for Science and Policy_ [CSaP network](http://www.csap.cam.ac.uk/about-csap/people/our-network/), University of Cambridge
 * Committee Member for the _International Commission on Polar Meteorology_ ([ICPM](http://www.icpm-iamas.aq/))
