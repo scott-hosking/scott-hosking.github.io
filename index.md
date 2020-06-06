@@ -4,6 +4,23 @@ title: "About me"
 excerpt: "Homepage - bio, roles etc"
 layout: single
 author_profile: true
+
+feature_row:
+  - image_path: /images/asl_index/asl_index-v2_region.png
+    alt: "placeholder image 1"
+    title: "Placeholder 1"
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+  - image_path: /images/asl_index/asl_index-v2_region.png
+    alt: "placeholder image 2"
+    title: "Placeholder 2"
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+    url: "#test-link"
+    btn_label: "Read More"
+    btn_class: "btn--inverse"
+  - image_path: /images/asl_index/asl_index-v2_region.png
+    title: "Placeholder 3"
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+
 ---
 
 I am an _Environmental Data Scientist_ at the British Antarctic Survey ([BAS](http://www.bas.ac.uk)) and a _Senior Research Fellow_ at the [Alan Turing Institute](https://www.turing.ac.uk/). My research involves the application of AI and machine learning techniques on vast and various datasets, including the output from global climate models and weather stations.  The primary aims of my work is to identify and understand the key mechanisms that drive year-to-year climate variability over vulnerable regions, the changes in frequency and strength of extreme weather events, and to reduce uncertainties in future climate predictions to help drive environmental policy. 
@@ -31,21 +48,5 @@ I have secured over **£6 million** for BAS as Principal-Investigator and Co-Inv
 * Deputy Chair - [Cambridge Earth System Science DTP](http://essdtp.esc.cam.ac.uk/), 2017-18 
 * Secretary - [Global Environmental Research Committee](https://royalsociety.org/topics-policy/energy-environment-climate/global-environmental-research-committee/), The Royal Society, 2016-2017
 * Lecturer, Polar Science coordinator — Earth System Science Spring School , 2010-2014
-
-feature_row:
-  - image_path: /images/asl_index/asl_index-v2_region.png
-    alt: "placeholder image 1"
-    title: "Placeholder 1"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
-  - image_path: /images/asl_index/asl_index-v2_region.png
-    alt: "placeholder image 2"
-    title: "Placeholder 2"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
-    url: "#test-link"
-    btn_label: "Read More"
-    btn_class: "btn--inverse"
-  - image_path: /images/asl_index/asl_index-v2_region.png
-    title: "Placeholder 3"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
 
 {% include feature_row %}
