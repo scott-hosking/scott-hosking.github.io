@@ -51,4 +51,6 @@ I have secured over **£6 million** for BAS as Principal-Investigator and Co-Inv
 * Secretary - [Global Environmental Research Committee](https://royalsociety.org/topics-policy/energy-environment-climate/global-environmental-research-committee/), The Royal Society, 2016-2017
 * Lecturer, Polar Science coordinator — Earth System Science Spring School , 2010-2014
 
+## My Research
+_Work in progress_
 {% include feature_row %}
