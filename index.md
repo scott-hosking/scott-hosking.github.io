@@ -6,21 +6,6 @@ layout: single
 author_profile: true
 
 feature_row:
-  - image_path: https://www.jbs.cam.ac.uk/fileadmin/_processed_/csm_2020-event-climatechange-883x432_049655fb49.jpg
-    title: "Business risk from climate change"
-    excerpt: "Quantifying risks of extreme weather and disruption to businesses and supply chains"
-    url: "https://www.cam.ac.uk/research/news/new-approaches-to-help-businesses-tackle-climate-change"
-
-  - image_path: https://www.bas.ac.uk/wp-content/uploads/2018/05/Wind-power-infographic_FINAL.jpg
-    title: "Wind energy in a 1.5˚C world"
-    excerpt: "The UK and large parts of Europe could become windier if global temperatures reach 1.5˚C above pre-industrial levels"
-    url: "https://www.bas.ac.uk/media-post/european-wind-energy-generation-potential-in-a-1-5%cb%9ac-warmer-world/"
-
-  - image_path: https://www.bas.ac.uk/wp-content/uploads/2016/10/10009930-903x600.jpg
-    title: "West Antarctic climate index"
-    excerpt: "Disentangling environmental signals over the region with greatest climate variability in the Southern Hemisphere"
-    url: "/asl_index"
-
   - image_path: https://www.turing.ac.uk/sites/default/files/styles/hero/public/2019-10/arctic_ice_loss.jpg
     title: "Deep learning for Arctic sea ice"
     excerpt: "Using machine learning techniques to understand the complex interactions between climate and Arctic sea ice"
@@ -30,6 +15,21 @@ feature_row:
     title: "Tracking iceberg populations"
     excerpt: "Using machine learning to develop new methods to detect and track icebergs in radar satellite imagery"
     url: "https://www.turing.ac.uk/research/research-projects/improving-tracking-iceberg-populations-southern-ocean"
+
+#   - image_path: https://www.jbs.cam.ac.uk/fileadmin/_processed_/csm_2020-event-climatechange-883x432_049655fb49.jpg
+#     title: "Business risk from climate change"
+#     excerpt: "Quantifying risks of extreme weather and disruption to businesses and supply chains"
+#     url: "https://www.cam.ac.uk/research/news/new-approaches-to-help-businesses-tackle-climate-change"
+
+#   - image_path: https://www.bas.ac.uk/wp-content/uploads/2018/05/Wind-power-infographic_FINAL.jpg
+#     title: "Wind energy in a 1.5˚C world"
+#     excerpt: "The UK and large parts of Europe could become windier if global temperatures reach 1.5˚C above pre-industrial levels"
+#     url: "https://www.bas.ac.uk/media-post/european-wind-energy-generation-potential-in-a-1-5%cb%9ac-warmer-world/"
+
+#   - image_path: https://www.bas.ac.uk/wp-content/uploads/2016/10/10009930-903x600.jpg
+#     title: "West Antarctic climate index"
+#     excerpt: "Disentangling environmental signals over the region with greatest climate variability in the Southern Hemisphere"
+#     url: "/asl_index"
 
 ---
 
