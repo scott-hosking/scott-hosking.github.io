@@ -1,9 +1,10 @@
 ---
-permalink: /projects
-title: "Projects"
-excerpt: "Projects"
+permalink: /research
+title: "Research"
+excerpt: "Research"
 ---
 
+## Projects
 I have secured over £6m for BAS, as Principal-Investigator and Co-Investigator on numerous grants. These include:
 
 * [Peruvian Glacier Retreat and its Impact on Water Security](https://gtr.ukri.org/projects?ref=NE%2FS013296%2F1) (Peru GROWS), NERC - Newton-Paulet Fund, 2019-2022
