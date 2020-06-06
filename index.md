@@ -1,35 +1,38 @@
 ---
 permalink: /
-title: "About me"
+title: "About"
 excerpt: "Homepage - bio, roles etc"
 layout: single
 author_profile: true
 
 feature_row:
-  - image_path: /images/asl_index/asl_index-v2_region.png
-    alt: "placeholder image 1"
-    title: "Arctic Sea Ice"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+  - image_path: https://www.turing.ac.uk/sites/default/files/styles/hero/public/2019-10/arctic_ice_loss.jpg
+    alt: "arctic sea ice"
+    title: "Deep learning for Arctic sea ice prediction"
+    excerpt: "Using machine learning techniques to understand the complex interactions between climate and Arctic sea ice"
+    url: "https://www.turing.ac.uk/research/research-projects/improving-tracking-iceberg-populations-southern-ocean"
   - image_path: https://www.turing.ac.uk/sites/default/files/styles/hero/public/2019-12/iceberg_tracking.jpg
-    alt: "placeholder image 2"
-    title: "Iceberg Tracking"
-    excerpt: "Improving tracking of iceberg populations in the Southern Ocean. Using machine learning to develop new methods to detect and track icebergs in radar satellite imagery"
+    alt: "icebergs"
+    title: "Improving tracking of iceberg populations"
+    excerpt: "Using machine learning to develop new methods to detect and track icebergs in radar satellite imagery"
     url: "https://www.turing.ac.uk/research/research-projects/improving-tracking-iceberg-populations-southern-ocean"
     btn_label: "Read More"
     btn_class: "btn--inverse"
   - image_path: /images/asl_index/asl_index-v2_region.png
-    title: "West Antarctica"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
-  - image_path: /images/asl_index/asl_index-v2_region.png
-    title: "Water Security"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+    title: "Amundesen Sea Low index"
+    excerpt: "Disentangling environmental signals over the region with greatest climate variability in the Southern Hemisphere"
+    url: "/asl_index"
 ---
 
 I am an _Environmental Data Scientist_ at the British Antarctic Survey ([BAS](http://www.bas.ac.uk)) and a _Senior Research Fellow_ at the [Alan Turing Institute](https://www.turing.ac.uk/). My research involves the application of AI and machine learning techniques on vast and various datasets, including the output from global climate models and weather stations.  The primary aims of my work is to identify and understand the key mechanisms that drive year-to-year climate variability over vulnerable regions, the changes in frequency and strength of extreme weather events, and to reduce uncertainties in future climate predictions to help drive environmental policy. 
 
 I am the **Head** of the [_BAS AI Lab_](http://www.bas.ac.uk/ai), and a **Co-Director** of the Centre for Doctoral Training (CDT) in the _Application of AI for the study of Environmental Risks_ ([_AI4ER_](https://ai4er-cdt.esc.cam.ac.uk/)) which is jointly led with the University of Cambridge. 
 
+## My Research
 I have secured over **£6 million** for BAS as Principal-Investigator and Co-Investigator on numerous [projects](/projects).
+{% include feature_row %}
+
+
 
 ## Also...
 * Chair of the [AI4ER CDT](https://ai4er-cdt.esc.cam.ac.uk/) Research Committee
@@ -50,7 +53,3 @@ I have secured over **£6 million** for BAS as Principal-Investigator and Co-Inv
 * Deputy Chair - [Cambridge Earth System Science DTP](http://essdtp.esc.cam.ac.uk/), 2017-18 
 * Secretary - [Global Environmental Research Committee](https://royalsociety.org/topics-policy/energy-environment-climate/global-environmental-research-committee/), The Royal Society, 2016-2017
 * Lecturer, Polar Science coordinator — Earth System Science Spring School , 2010-2014
-
-## My Research
-_Work in progress_
-{% include feature_row %}
