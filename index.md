@@ -20,7 +20,9 @@ feature_row:
   - image_path: /images/asl_index/asl_index-v2_region.png
     title: "Placeholder 3"
     excerpt: "This is some sample content that goes here with **Markdown** formatting."
-
+  - image_path: /images/asl_index/asl_index-v2_region.png
+    title: "Placeholder 4"
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
 ---
 
 I am an _Environmental Data Scientist_ at the British Antarctic Survey ([BAS](http://www.bas.ac.uk)) and a _Senior Research Fellow_ at the [Alan Turing Institute](https://www.turing.ac.uk/). My research involves the application of AI and machine learning techniques on vast and various datasets, including the output from global climate models and weather stations.  The primary aims of my work is to identify and understand the key mechanisms that drive year-to-year climate variability over vulnerable regions, the changes in frequency and strength of extreme weather events, and to reduce uncertainties in future climate predictions to help drive environmental policy. 
