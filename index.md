@@ -16,16 +16,16 @@ feature_row:
     title: "Tracking iceberg populations"
     excerpt: "Using machine learning to develop new methods to detect and track icebergs in radar satellite imagery"
     url: "https://www.turing.ac.uk/research/research-projects/improving-tracking-iceberg-populations-southern-ocean"
-  - image_path: "https://www.bas.ac.uk/wp-content/uploads/2018/05/Wind-power-infographic_FINAL.jpg"
-    title: "Wind energy generation in a 1.5˚C world"
-    excerpt: "The UK and large parts of northern Europe could become windier if global temperatures reach 1.5˚C above pre-industrial levels"
+  - image_path: https://www.jbs.cam.ac.uk/fileadmin/_processed_/csm_2020-event-climatechange-883x432_049655fb49.jpg
+    title: "Business risk from climate change"
+    excerpt: "Quantifying risks of extreme weather and disruption to businesses and supply chains"
+    url: https://www.cam.ac.uk/research/news/new-approaches-to-help-businesses-tackle-climate-change
+  - image_path: https://www.bas.ac.uk/wp-content/uploads/2018/05/Wind-power-infographic_FINAL.jpg
+    title: "Wind energy in a 1.5˚C world"
+    excerpt: "The UK and large parts of Europe could become windier if global temperatures reach 1.5˚C above pre-industrial levels"
     url: "https://www.bas.ac.uk/media-post/european-wind-energy-generation-potential-in-a-1-5%cb%9ac-warmer-world/"
-  - image_path: "https://www.cam.ac.uk/sites/www.cam.ac.uk/files/styles/content-885x432/public/news/research/news/crop2_8.jpg"
-    title: "New approaches to help businesses tackle climate change "
-    excerpt: "Designing new indices to analyse and quantify the increasing risks of extreme weather events, and their potential to disrupt business operations and global supply chains."
-    url: "https://www.cam.ac.uk/research/news/new-approaches-to-help-businesses-tackle-climate-change"
-  - image_path: "https://www.bas.ac.uk/wp-content/uploads/2016/10/10009930-903x600.jpg"
-    title: "Amundsen Sea Low index"
+  - image_path: https://www.bas.ac.uk/wp-content/uploads/2016/10/10009930-903x600.jpg
+    title: "West Antarctic climate index"
     excerpt: "Disentangling environmental signals over the region with greatest climate variability in the Southern Hemisphere"
     url: "/asl_index"
 
@@ -33,9 +33,7 @@ feature_row:
 
 I am an _Environmental Data Scientist_ at the British Antarctic Survey ([BAS](http://www.bas.ac.uk)) and a _Senior Research Fellow_ at the [Alan Turing Institute](https://www.turing.ac.uk/). My research involves the application of AI and machine learning techniques on vast and various datasets, including the output from global climate models and weather stations.  The primary aims of my work is to identify and understand the key mechanisms that drive year-to-year climate variability over vulnerable regions, the changes in frequency and strength of extreme weather events, and to reduce uncertainties in future climate predictions to help drive environmental policy. 
 
-I am the **Head** of the [_BAS AI Lab_](http://www.bas.ac.uk/ai), and a **Co-Director** of the Centre for Doctoral Training (CDT) in the _Application of AI for the study of Environmental Risks_ ([_AI4ER_](https://ai4er-cdt.esc.cam.ac.uk/)) which is jointly led with the University of Cambridge. 
-
-[Read CV](/cv) 
+I am the **Head** of the [_BAS AI Lab_](http://www.bas.ac.uk/ai), and a **Co-Director** of the Centre for Doctoral Training (CDT) in the _Application of AI for the study of Environmental Risks_ ([_AI4ER_](https://ai4er-cdt.esc.cam.ac.uk/)) which is jointly led with the University of Cambridge. [[_Read More..._](/cv) 
 
 ## Highlights 
 {% include feature_row %}
