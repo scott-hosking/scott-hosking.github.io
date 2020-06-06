@@ -1,0 +1,326 @@
+I"€Ž<p>This notebook was jointly written by Scott Hosking and Tony Phillips (BAS)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="n">xr</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="n">colors</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="n">ccrs</span>
+<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="n">cfe</span>
+<span class="kn">import</span> <span class="nn">pyproj</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+</code></pre></div></div>
+
+<h3 id="read-in-data">Read in data</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="p">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s">'~/Documents/RACMO/RACMO2.3p2_ANT27_precip_daily_1979_1980.nc'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="look-at-dataset-we-have-just-read-in">Look at dataset we have just read in</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Examine the dataset (dimensions, coordinates, data variables and global attributes)
+</span><span class="n">ds</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;xarray.Dataset&gt;
+Dimensions:       (bnds: 2, height: 1, nblock1: 40, nblock2: 400, rlat: 240, rlon: 262, time: 731)
+Coordinates:
+    lon           (rlat, rlon) float64 ...
+    lat           (rlat, rlon) float64 ...
+  * rlon          (rlon) float64 -32.75 -32.5 -32.25 -32.0 ... 32.0 32.25 32.5
+  * rlat          (rlat) float64 -30.0 -29.75 -29.5 -29.25 ... 29.25 29.5 29.75
+  * height        (height) float64 0.0
+  * time          (time) datetime64[ns] 1979-01-01 1979-01-02 ... 1980-12-31
+Dimensions without coordinates: bnds, nblock1, nblock2
+Data variables:
+    dir           (rlat, rlon) float64 ...
+    block1        (nblock1) int32 ...
+    block2        (nblock2) int32 ...
+    time_bnds     (time, bnds) datetime64[ns] ...
+    dtg           (time) int32 ...
+    date_bnds     (time, bnds) int32 ...
+    hms_bnds      (time, bnds) int32 ...
+    assigned      (time) int32 ...
+    rotated_pole  float32 ...
+    precip        (time, height, rlat, rlon) float32 ...
+Attributes:
+    Conventions:   CF-1.4
+    source:        RACMO2
+    Domain:        ANT27
+    Experiment:    ERAINx_RACMO2.4.1
+    institution:   Royal Netherlands Meteorological Institute (KNMI)
+    CreationDate:  Tue Dec 20 05:06:59 2016
+    comment:       asim2cdf: cpar=precip, iwmo=61, ilvt=105, ilev=0, idh=24, ...
+    title:         Total Precipitative Flux
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Look at the precipitation variable
+</span><span class="n">ds</span><span class="p">.</span><span class="n">precip</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;xarray.DataArray 'precip' (time: 731, height: 1, rlat: 240, rlon: 262)&gt;
+[45965280 values with dtype=float32]
+Coordinates:
+    lon      (rlat, rlon) float64 ...
+    lat      (rlat, rlon) float64 ...
+  * rlon     (rlon) float64 -32.75 -32.5 -32.25 -32.0 ... 31.75 32.0 32.25 32.5
+  * rlat     (rlat) float64 -30.0 -29.75 -29.5 -29.25 ... 29.0 29.25 29.5 29.75
+  * height   (height) float64 0.0
+  * time     (time) datetime64[ns] 1979-01-01 1979-01-02 ... 1980-12-31
+Attributes:
+    standard_name:  precipitation_flux
+    long_name:      Total Precipitative Flux
+    units:          kg m-2 s-1
+    cell_methods:   time: 24-hr averaged values
+    grid_mapping:   rotated_pole
+</code></pre></div></div>
+
+<h3 id="select-precip-data-variable-and-squeeze-to-remove-redundant-height-coordinate">Select precip â€˜Data variableâ€™ and squeeze to remove redundant height coordinate</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">precip</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">precip</span><span class="p">.</span><span class="n">squeeze</span><span class="p">()</span>
+<span class="n">precip</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;xarray.DataArray 'precip' (time: 731, rlat: 240, rlon: 262)&gt;
+[45965280 values with dtype=float32]
+Coordinates:
+    lon      (rlat, rlon) float64 ...
+    lat      (rlat, rlon) float64 ...
+  * rlon     (rlon) float64 -32.75 -32.5 -32.25 -32.0 ... 31.75 32.0 32.25 32.5
+  * rlat     (rlat) float64 -30.0 -29.75 -29.5 -29.25 ... 29.0 29.25 29.5 29.75
+    height   float64 0.0
+  * time     (time) datetime64[ns] 1979-01-01 1979-01-02 ... 1980-12-31
+Attributes:
+    standard_name:  precipitation_flux
+    long_name:      Total Precipitative Flux
+    units:          kg m-2 s-1
+    cell_methods:   time: 24-hr averaged values
+    grid_mapping:   rotated_pole
+</code></pre></div></div>
+
+<h3 id="project-rotated-grid-onto-lat-lon-grid">Project rotated grid onto lat-lon grid</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ds</span><span class="p">.</span><span class="n">rotated_pole</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;xarray.DataArray 'rotated_pole' ()&gt;
+array(9.96921e+36, dtype=float32)
+Attributes:
+    grid_mapping_name:          rotated_latitude_longitude
+    grid_north_pole_latitude:   -180.0
+    grid_north_pole_longitude:  -170.0
+    proj4_params:               -m 57.295779506 +proj=ob_tran +o_proj=latlon ...
+    proj_parameters:            -m 57.295779506 +proj=ob_tran +o_proj=latlon ...
+    projection_name:            rotated_latitude_longitude
+    long_name:                  projection details
+    EPSG_code:                  
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rad2deg</span> <span class="o">=</span> <span class="mf">180.</span><span class="o">/</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pyproj</span><span class="p">.</span><span class="n">Proj</span><span class="p">(</span><span class="s">'+ellps=WGS84 +proj=ob_tran +o_proj=latlon +o_lat_p=-180.0 +o_lon_p=-170.0 +lon_0=180.0'</span><span class="p">)</span>
+
+<span class="n">rlon</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">rlon</span><span class="p">.</span><span class="n">values</span>
+<span class="n">rlat</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">rlat</span><span class="p">.</span><span class="n">values</span>
+
+<span class="n">x1</span><span class="p">,</span><span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">rlon</span><span class="p">,</span> <span class="n">rlat</span><span class="p">)</span>
+
+<span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">p</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span> 
+
+<span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">lon</span><span class="o">*</span><span class="n">rad2deg</span><span class="p">,</span> <span class="n">lat</span><span class="o">*</span><span class="n">rad2deg</span>    <span class="c1"># radians --&gt; degrees
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># lets have a look at the data (max and min values)
+</span><span class="n">np</span><span class="p">.</span><span class="nb">min</span><span class="p">(</span><span class="n">precip</span><span class="p">.</span><span class="n">values</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">precip</span><span class="p">.</span><span class="n">values</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="nb">min</span><span class="p">(</span><span class="n">lon</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">lon</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="nb">min</span><span class="p">(</span><span class="n">lon</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">lon</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="nb">min</span><span class="p">(</span><span class="n">lat</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(-1.8083428e-07,
+ 0.0028139532,
+ -179.99416710873103,
+ 179.98894588985064,
+ -179.99416710873103,
+ 179.98894588985064,
+ -90.0,
+ -46.74917892351622)
+</code></pre></div></div>
+
+<h3 id="plot-map">Plot map</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># select the first time from the data 
+</span><span class="n">data</span> <span class="o">=</span> <span class="n">precip</span><span class="p">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># see what it looks like (data, coordinates and attributes)
+</span><span class="n">data</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;xarray.DataArray 'precip' (rlat: 240, rlon: 262)&gt;
+array([[6.673193e-05, 1.738828e-04, 1.959459e-04, ..., 7.532207e-05,
+        7.269982e-05, 6.908291e-05],
+       [2.103231e-04, 2.199079e-04, 2.307586e-04, ..., 8.038575e-05,
+        7.857729e-05, 7.541250e-05],
+       [1.844622e-04, 4.973246e-05, 5.136007e-05, ..., 9.132689e-05,
+        9.195985e-05, 9.006097e-05],
+       ...,
+       [2.233440e-05, 2.025468e-05, 1.808453e-05, ..., 3.345638e-06,
+        3.436061e-06, 3.436061e-06],
+       [2.441412e-05, 2.839271e-05, 2.025468e-05, ..., 3.255216e-06,
+        3.255216e-06, 3.436061e-06],
+       [2.396200e-05, 2.269609e-05, 2.170144e-05, ..., 3.164793e-06,
+        3.255216e-06, 3.345638e-06]], dtype=float32)
+Coordinates:
+    lon      (rlat, rlon) float64 ...
+    lat      (rlat, rlon) float64 ...
+  * rlon     (rlon) float64 -32.75 -32.5 -32.25 -32.0 ... 31.75 32.0 32.25 32.5
+  * rlat     (rlat) float64 -30.0 -29.75 -29.5 -29.25 ... 29.0 29.25 29.5 29.75
+    height   float64 0.0
+    time     datetime64[ns] 1979-01-01
+Attributes:
+    standard_name:  precipitation_flux
+    long_name:      Total Precipitative Flux
+    units:          kg m-2 s-1
+    cell_methods:   time: 24-hr averaged values
+    grid_mapping:   rotated_pole
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplot</span><span class="p">(</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">Stereographic</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">central_latitude</span><span class="o">=-</span><span class="mf">90.</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="n">set_extent</span><span class="p">([</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="o">-</span><span class="mi">55</span><span class="p">],</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+
+<span class="c1"># set up a Cartopy coordinate reference system for the data (rotated pole as described above)
+</span><span class="n">data_crs</span> <span class="o">=</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">RotatedPole</span><span class="p">(</span><span class="n">pole_longitude</span><span class="o">=</span><span class="n">ds</span><span class="p">.</span><span class="n">rotated_pole</span><span class="p">.</span><span class="n">grid_north_pole_longitude</span><span class="p">,</span>
+                            <span class="n">pole_latitude</span><span class="o">=</span><span class="n">ds</span><span class="p">.</span><span class="n">rotated_pole</span><span class="p">.</span><span class="n">grid_north_pole_latitude</span><span class="p">)</span>
+
+<span class="c1"># set up pseudo-log contour levels and a norm that maps colour indices onto them appropriately 
+</span><span class="n">levels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">colors</span><span class="p">.</span><span class="n">BoundaryNorm</span><span class="p">(</span><span class="n">boundaries</span><span class="o">=</span><span class="n">levels</span><span class="p">,</span> <span class="n">ncolors</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
+
+<span class="c1"># plot data (converting flux to mm/day)
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">rlon</span><span class="p">,</span> <span class="n">rlat</span><span class="p">,</span> <span class="n">data</span><span class="o">*</span><span class="mf">86400.</span><span class="p">,</span> <span class="n">levels</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s">'both'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">'Blues'</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">data_crs</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s">'50m'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s">'horizontal'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'mm/day'</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s">'both'</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">long_name</span><span class="o">+</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">'xx-large'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">''</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/images/notebooks/racmo_with_xarray/output_15_1.png" alt="png" /></p>
+
+<h3 id="plot-deals-with-spatial-dimensions-but-not-time-so-add-time-information-to-title">Plot deals with spatial dimensions but not time, so add time information to title</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># look at the time coordinate
+</span><span class="n">data</span><span class="p">.</span><span class="n">coords</span><span class="p">[</span><span class="s">'time'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;xarray.DataArray 'time' ()&gt;
+array('1979-01-01T00:00:00.000000000', dtype='datetime64[ns]')
+Coordinates:
+    height   float64 0.0
+    time     datetime64[ns] 1979-01-01
+Attributes:
+    axis:       T
+    long_name:  time
+    dtgstart:   1979010100
+    bounds:     time_bnds
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># time has bounds, so extract the bounds for the first time step
+</span><span class="n">time_bounds</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">time_bnds</span><span class="p">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">time_bounds</span><span class="p">.</span><span class="n">values</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['1979-01-01T00:00:00.000000000', '1979-01-02T00:00:00.000000000'],
+      dtype='datetime64[ns]')
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># convert the time bounds to Python datetimes
+</span><span class="n">tb_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">pd</span><span class="p">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">tbv</span><span class="p">).</span><span class="n">to_pydatetime</span><span class="p">()</span> <span class="k">for</span> <span class="n">tbv</span> <span class="ow">in</span> <span class="n">time_bounds</span><span class="p">.</span><span class="n">values</span><span class="p">]</span>
+<span class="n">tb_values</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[datetime.datetime(1979, 1, 1, 0, 0), datetime.datetime(1979, 1, 2, 0, 0)]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># format the time bounds as "From ... to ..."
+# See https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior for format codes
+</span><span class="n">time_fmt</span> <span class="o">=</span> <span class="s">'%Y-%m-%d %H:%M:%S'</span>
+<span class="n">time_bounds_str</span> <span class="o">=</span> <span class="s">'From {} to {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">tb_values</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">strftime</span><span class="p">(</span><span class="n">time_fmt</span><span class="p">),</span> <span class="n">tb_values</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">strftime</span><span class="p">(</span><span class="n">time_fmt</span><span class="p">))</span>
+<span class="n">time_bounds_str</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'From 1979-01-01 00:00:00 to 1979-01-02 00:00:00'
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplot</span><span class="p">(</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">Stereographic</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">central_latitude</span><span class="o">=-</span><span class="mf">90.</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="n">set_extent</span><span class="p">([</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="o">-</span><span class="mi">55</span><span class="p">],</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+
+<span class="c1"># set up a Cartopy coordinate reference system for the data (rotated pole as described above)
+</span><span class="n">data_crs</span> <span class="o">=</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">RotatedPole</span><span class="p">(</span><span class="n">pole_longitude</span><span class="o">=</span><span class="n">ds</span><span class="p">.</span><span class="n">rotated_pole</span><span class="p">.</span><span class="n">grid_north_pole_longitude</span><span class="p">,</span>
+                            <span class="n">pole_latitude</span><span class="o">=</span><span class="n">ds</span><span class="p">.</span><span class="n">rotated_pole</span><span class="p">.</span><span class="n">grid_north_pole_latitude</span><span class="p">)</span>
+
+<span class="c1"># set up pseudo-log contour levels and a norm that maps colour indices onto them appropriately 
+</span><span class="n">levels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">colors</span><span class="p">.</span><span class="n">BoundaryNorm</span><span class="p">(</span><span class="n">boundaries</span><span class="o">=</span><span class="n">levels</span><span class="p">,</span> <span class="n">ncolors</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
+
+<span class="c1"># plot data (converting flux to mm/day)
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">rlon</span><span class="p">,</span> <span class="n">rlat</span><span class="p">,</span> <span class="n">data</span><span class="o">*</span><span class="mf">86400.</span><span class="p">,</span> <span class="n">levels</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s">'both'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">'Blues'</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">data_crs</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s">'50m'</span><span class="p">)</span>
+
+<span class="c1"># oh, and add the ice shelves too (see available features and resolutions at https://www.naturalearthdata.com/features/)
+</span><span class="n">ax</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfe</span><span class="p">.</span><span class="n">NaturalEarthFeature</span><span class="p">(</span><span class="s">'physical'</span><span class="p">,</span> <span class="s">'antarctic_ice_shelves_lines'</span><span class="p">,</span> <span class="s">'50m'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">'k'</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s">'horizontal'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'mm/day'</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s">'both'</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">long_name</span><span class="o">+</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="o">+</span><span class="n">time_bounds_str</span><span class="o">+</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">'xx-large'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">''</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/images/notebooks/racmo_with_xarray/output_21_1.png" alt="png" /></p>
+
+<h3 id="make-the-same-plot-but-using-the-true-lon-and-lat-coordinates-projected-into-the-plots-coordinate-system">Make the same plot but using the true lon and lat coordinates projected into the plotâ€™s coordinate system</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">Stereographic</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">central_latitude</span><span class="o">=-</span><span class="mf">90.</span><span class="p">)</span>
+<span class="n">plot_coords</span> <span class="o">=</span> <span class="n">projection</span><span class="p">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">plot_coords</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">plot_coords</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="n">set_extent</span><span class="p">([</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="o">-</span><span class="mi">55</span><span class="p">],</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+
+<span class="c1"># set up a Cartopy coordinate reference system for the data (rotated pole as described above)
+</span><span class="n">data_crs</span> <span class="o">=</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">RotatedPole</span><span class="p">(</span><span class="n">pole_longitude</span><span class="o">=</span><span class="n">ds</span><span class="p">.</span><span class="n">rotated_pole</span><span class="p">.</span><span class="n">grid_north_pole_longitude</span><span class="p">,</span>
+                            <span class="n">pole_latitude</span><span class="o">=</span><span class="n">ds</span><span class="p">.</span><span class="n">rotated_pole</span><span class="p">.</span><span class="n">grid_north_pole_latitude</span><span class="p">)</span>
+
+<span class="c1"># set up pseudo-log contour levels and a norm that maps colour indices onto them appropriately 
+</span><span class="n">levels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">colors</span><span class="p">.</span><span class="n">BoundaryNorm</span><span class="p">(</span><span class="n">boundaries</span><span class="o">=</span><span class="n">levels</span><span class="p">,</span> <span class="n">ncolors</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
+
+<span class="c1"># plot data (converting flux to mm/day)
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">data</span><span class="o">*</span><span class="mf">86400.</span><span class="p">,</span> <span class="n">levels</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s">'both'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">'Blues'</span><span class="p">,</span>
+                     <span class="n">transform</span><span class="o">=</span><span class="n">projection</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s">'50m'</span><span class="p">)</span>
+
+<span class="c1"># oh, and add the ice shelves too (see available features and resolutions at https://www.naturalearthdata.com/features/)
+</span><span class="n">ax</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfe</span><span class="p">.</span><span class="n">NaturalEarthFeature</span><span class="p">(</span><span class="s">'physical'</span><span class="p">,</span> <span class="s">'antarctic_ice_shelves_lines'</span><span class="p">,</span> <span class="s">'50m'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">'k'</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s">'horizontal'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'mm/day'</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s">'both'</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">long_name</span><span class="o">+</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="o">+</span><span class="n">time_bounds_str</span><span class="o">+</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">'xx-large'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">''</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/images/notebooks/racmo_with_xarray/output_23_1.png" alt="png" /></p>
+
+:ET

@@ -1,0 +1,672 @@
+I"H<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
+
+<h2>Pages</h2>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/404.html" rel="permalink">Page Not Found</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Page not found. Your pixels are in another canvas.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/asl_index" rel="permalink">Amundsen Sea Low (ASL) Index</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">ASL Index
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/categories/" rel="permalink">Posts by Category</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/code" rel="permalink">Code</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">code, tools and jupyter notebooks
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/collection-archive/" rel="permalink">Posts by Collection</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/cv" rel="permalink">Curriculum Vitae</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">cv
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/categories/edge-case/" rel="permalink">Edge Case</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Sample post listing for the category Edge Case.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/group" rel="permalink">Group</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">group
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/highlights" rel="permalink">Highlights</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">outreach, talks, blogs etc
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/" rel="permalink"></a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">A flexible two-column Jekyll theme. Perfect for building personal sites, blogs, and portfolios. Latest release v4.16.0
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/" rel="permalink"></a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/" rel="permalink">About</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Homepage - bio, roles etc
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/assets/js/lunr/lunr-en.js" rel="permalink"></a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">var idx = lunr(function () {
+  this.field(‘title’)
+  this.field(‘excerpt’)
+  this.field(‘categories’)
+  this.field(‘tags’)
+  this.ref(‘id’)
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/assets/js/lunr/lunr-gr.js" rel="permalink"></a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">step1list = new Array();
+step1list[“ΦΑΓΙΑ”] = “ΦΑ”;
+step1list[“ΦΑΓΙΟΥ”] = “ΦΑ”;
+step1list[“ΦΑΓΙΩΝ”] = “ΦΑ”;
+step1list[“ΣΚΑΓΙΑ”] = “ΣΚΑ”;
+step1list[“ΣΚΑΓΙΟΥ”]...</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/assets/js/lunr/lunr-store.js" rel="permalink"></a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">var store = [{
+        “title”: “Smoothing a noisy time series”,
+        “excerpt”:”using a low-pass filter def lpfilter(input_signal, win): # Low-pass linea...</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/assets/css/main.css" rel="permalink"></a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">/*!
+
+  Minimal Mistakes Jekyll Theme 4.16.0 by Michael Rose
+  
+    
+      
+        
+          Copyright 2013-2019 Michael Rose - mademistakes.com
+          @...</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/tags/markup/" rel="permalink">Markup</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Sample post listing for the tag markup.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/notebooks" rel="permalink">Python Notebooks</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">A small (but growing) collection of Jupyter notebooks
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/pets/" rel="permalink">Pets</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Sample document listing for the collection _pets.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/portfolio/" rel="permalink">Portfolio</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Sample document listing for the collection _portfolio.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/post-archive-feature-rows/" rel="permalink">Post Archive with Feature Rows</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/publications" rel="permalink">Publications</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">J. Scott Hosking - Publications
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/publications_short" rel="permalink">Publications</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">J. Scott Hosking - Publications
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/recipes/" rel="permalink">Recipes</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Sample document listing for the collection _recipes.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/research" rel="permalink">Research</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Research
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/sample-page/" rel="permalink">Sample Page</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">This is an example page. It’s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most pe...</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/sitemap/" rel="permalink">Sitemap</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">A list of all the posts and pages found on the site. For you robots out there is an XML version available for digesting as well.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/splash-page/" rel="permalink">Splash Page</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Bacon ipsum dolor sit amet salami ham hock ham, hamburger corned beef short ribs kielbasa biltong t-bone drumstick tri-tip tail sirloin pork chop.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/tags/" rel="permalink">Posts by Tag</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/terms/" rel="permalink">Terms and Privacy Policy</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Privacy Policy
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/year-archive/" rel="permalink">Posts by Year</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/sitemap.xml" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/feed.xml" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/assets/css/main.css.map" rel="permalink"></a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">/*!
+
+  Minimal Mistakes Jekyll Theme 4.16.0 by Michael Rose
+  
+    
+      
+        
+          Copyright 2013-2019 Michael Rose - mademistakes.com
+          @...</p>
+  </article>
+</div>
+
+<h2>Posts</h2>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/notebooks/wrf_with_xarray/" rel="permalink">Reading and plotting WRF data using wrf-python and Xarray
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">This page demonstrates how you can read in and work with output from the Weather Research and Forecasting (WRF) model
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/notebooks/asl_detection/" rel="permalink">Creating an Amundsen Sea Low (ASL) index
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">This work is a continuation of my 2013 and 2016 papers as described here
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/notebooks/racmo_with_xarray/" rel="permalink">Working with the RACMO regional climate model
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  5 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">This notebook was jointly written by Scott Hosking and Tony Phillips (BAS)
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/notebooks/ghcn_daily/" rel="permalink">Get daily average weather station data (Global)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">A set of Python tools to make it easier to extract weather station data (e.g., temperature, precipitation) from the Global Historical Climatology Network - D...</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/notebooks/ghcn_monthly/" rel="permalink">Get monthly average weather station data (Global)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Extract countries of interest (along with their coordinates) from the
+Global Historical Climatology Network - Monthly (GHCNM) Version 3
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/notebooks/baspy_using_xarray/" rel="permalink">Using BASpy to read in climate model data (CMIP5) into Xarray
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">For this notebook to work you will need to install:
+
+  BASpy (for getting data)
+  Xarray (for processing data)
+  Cartopy (for plotting maps)
+
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/notebooks/smooth_timeseries/" rel="permalink">Smoothing a noisy time series
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+  using a low-pass filter
+
+</p>
+  </article>
+</div>
+
+:ET

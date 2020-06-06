@@ -1,0 +1,552 @@
+I"&?<p>A set of Python tools to make it easier to extract weather station data (e.g., temperature, precipitation) from the <a href="https://www.ncdc.noaa.gov/ghcn-daily-description">Global Historical Climatology Network - Daily (GHCND)</a></p>
+
+<p>More information on the data can be found <a href="https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt">here</a></p>
+
+<p>The code can be downloaded from the <a href="https://github.com/scott-hosking/get_station_data"><em>get_station_data</em></a> github repository</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">get_station_data</span> <span class="kn">import</span> <span class="n">ghcnd</span>
+<span class="kn">from</span> <span class="nn">get_station_data.util</span> <span class="kn">import</span> <span class="n">nearest_stn</span>
+
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span> 
+</code></pre></div></div>
+
+<h3 id="read-station-metadata">Read station metadata</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">stn_md</span> <span class="o">=</span> <span class="n">ghcnd</span><span class="p">.</span><span class="n">get_stn_metadata</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="choose-a-location-lonlat-and-number-of-nearest-neighbours">Choose a location (lon/lat) and number of nearest neighbours</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">london_lon_lat</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1278</span><span class="p">,</span> <span class="mf">51.5074</span>
+<span class="n">my_stns</span> <span class="o">=</span> <span class="n">nearest_stn</span><span class="p">(</span><span class="n">stn_md</span><span class="p">,</span> 
+                        <span class="n">london_lon_lat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">london_lon_lat</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> 
+                        <span class="n">n_neighbours</span><span class="o">=</span><span class="mi">5</span> <span class="p">)</span>
+<span class="n">my_stns</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>station</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>elev</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>52113</th>
+      <td>UKE00105915</td>
+      <td>51.5608</td>
+      <td>0.1789</td>
+      <td>137.0</td>
+      <td>HAMPSTEAD</td>
+    </tr>
+    <tr>
+      <th>52165</th>
+      <td>UKM00003772</td>
+      <td>51.4780</td>
+      <td>-0.4610</td>
+      <td>25.3</td>
+      <td>HEATHROW</td>
+    </tr>
+    <tr>
+      <th>52098</th>
+      <td>UKE00105900</td>
+      <td>51.8067</td>
+      <td>0.3581</td>
+      <td>128.0</td>
+      <td>ROTHAMSTED</td>
+    </tr>
+    <tr>
+      <th>52191</th>
+      <td>UKW00035054</td>
+      <td>51.2833</td>
+      <td>0.4000</td>
+      <td>91.1</td>
+      <td>WEST MALLING</td>
+    </tr>
+    <tr>
+      <th>52131</th>
+      <td>UKE00107650</td>
+      <td>51.4789</td>
+      <td>0.4489</td>
+      <td>25.0</td>
+      <td>HEATHROW</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="download-and-extract-data-into-a-pandas-dataframe">Download and extract data into a pandas DataFrame</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">ghcnd</span><span class="p">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">my_stns</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>station</th>
+      <th>year</th>
+      <th>month</th>
+      <th>day</th>
+      <th>element</th>
+      <th>value</th>
+      <th>mflag</th>
+      <th>qflag</th>
+      <th>sflag</th>
+      <th>date</th>
+      <th>lon</th>
+      <th>lat</th>
+      <th>elev</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>UKE00105915</td>
+      <td>1959</td>
+      <td>12</td>
+      <td>1</td>
+      <td>TMAX</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1959-12-01</td>
+      <td>0.1789</td>
+      <td>51.5608</td>
+      <td>137.0</td>
+      <td>HAMPSTEAD</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>UKE00105915</td>
+      <td>1959</td>
+      <td>12</td>
+      <td>2</td>
+      <td>TMAX</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1959-12-02</td>
+      <td>0.1789</td>
+      <td>51.5608</td>
+      <td>137.0</td>
+      <td>HAMPSTEAD</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>UKE00105915</td>
+      <td>1959</td>
+      <td>12</td>
+      <td>3</td>
+      <td>TMAX</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1959-12-03</td>
+      <td>0.1789</td>
+      <td>51.5608</td>
+      <td>137.0</td>
+      <td>HAMPSTEAD</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>UKE00105915</td>
+      <td>1959</td>
+      <td>12</td>
+      <td>4</td>
+      <td>TMAX</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1959-12-04</td>
+      <td>0.1789</td>
+      <td>51.5608</td>
+      <td>137.0</td>
+      <td>HAMPSTEAD</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>UKE00105915</td>
+      <td>1959</td>
+      <td>12</td>
+      <td>5</td>
+      <td>TMAX</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1959-12-05</td>
+      <td>0.1789</td>
+      <td>51.5608</td>
+      <td>137.0</td>
+      <td>HAMPSTEAD</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="filter-data-for-eg-a-single-variable">Filter data for, e.g., a single variable</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="o">=</span> <span class="s">'PRCP'</span>   <span class="c1"># precipitation
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s">'element'</span><span class="p">]</span> <span class="o">==</span> <span class="n">var</span> <span class="p">]</span>
+
+<span class="c1">### Tidy up columns
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s">"value"</span><span class="p">:</span> <span class="n">var</span><span class="p">})</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">drop</span><span class="p">([</span><span class="s">'element'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>station</th>
+      <th>year</th>
+      <th>month</th>
+      <th>day</th>
+      <th>PRCP</th>
+      <th>mflag</th>
+      <th>qflag</th>
+      <th>sflag</th>
+      <th>date</th>
+      <th>lon</th>
+      <th>lat</th>
+      <th>elev</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>93</th>
+      <td>UKE00105915</td>
+      <td>1960</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2.5</td>
+      <td></td>
+      <td></td>
+      <td>E</td>
+      <td>1960-01-01</td>
+      <td>0.1789</td>
+      <td>51.5608</td>
+      <td>137.0</td>
+      <td>HAMPSTEAD</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>UKE00105915</td>
+      <td>1960</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1.5</td>
+      <td></td>
+      <td></td>
+      <td>E</td>
+      <td>1960-01-02</td>
+      <td>0.1789</td>
+      <td>51.5608</td>
+      <td>137.0</td>
+      <td>HAMPSTEAD</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>UKE00105915</td>
+      <td>1960</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td></td>
+      <td></td>
+      <td>E</td>
+      <td>1960-01-03</td>
+      <td>0.1789</td>
+      <td>51.5608</td>
+      <td>137.0</td>
+      <td>HAMPSTEAD</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>UKE00105915</td>
+      <td>1960</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0.8</td>
+      <td></td>
+      <td></td>
+      <td>E</td>
+      <td>1960-01-04</td>
+      <td>0.1789</td>
+      <td>51.5608</td>
+      <td>137.0</td>
+      <td>HAMPSTEAD</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>UKE00105915</td>
+      <td>1960</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0.0</td>
+      <td></td>
+      <td></td>
+      <td>E</td>
+      <td>1960-01-05</td>
+      <td>0.1789</td>
+      <td>51.5608</td>
+      <td>137.0</td>
+      <td>HAMPSTEAD</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">'mflag'</span><span class="p">,</span><span class="s">'qflag'</span><span class="p">,</span><span class="s">'sflag'</span><span class="p">]).</span><span class="n">tail</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>station</th>
+      <th>year</th>
+      <th>month</th>
+      <th>day</th>
+      <th>PRCP</th>
+      <th>date</th>
+      <th>lon</th>
+      <th>lat</th>
+      <th>elev</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>83938</th>
+      <td>UKE00107650</td>
+      <td>2016</td>
+      <td>12</td>
+      <td>22</td>
+      <td>0.0</td>
+      <td>2016-12-22</td>
+      <td>0.4489</td>
+      <td>51.4789</td>
+      <td>25.0</td>
+      <td>HEATHROW</td>
+    </tr>
+    <tr>
+      <th>83939</th>
+      <td>UKE00107650</td>
+      <td>2016</td>
+      <td>12</td>
+      <td>23</td>
+      <td>1.4</td>
+      <td>2016-12-23</td>
+      <td>0.4489</td>
+      <td>51.4789</td>
+      <td>25.0</td>
+      <td>HEATHROW</td>
+    </tr>
+    <tr>
+      <th>83940</th>
+      <td>UKE00107650</td>
+      <td>2016</td>
+      <td>12</td>
+      <td>24</td>
+      <td>0.0</td>
+      <td>2016-12-24</td>
+      <td>0.4489</td>
+      <td>51.4789</td>
+      <td>25.0</td>
+      <td>HEATHROW</td>
+    </tr>
+    <tr>
+      <th>83941</th>
+      <td>UKE00107650</td>
+      <td>2016</td>
+      <td>12</td>
+      <td>25</td>
+      <td>1.0</td>
+      <td>2016-12-25</td>
+      <td>0.4489</td>
+      <td>51.4789</td>
+      <td>25.0</td>
+      <td>HEATHROW</td>
+    </tr>
+    <tr>
+      <th>83942</th>
+      <td>UKE00107650</td>
+      <td>2016</td>
+      <td>12</td>
+      <td>26</td>
+      <td>0.0</td>
+      <td>2016-12-26</td>
+      <td>0.4489</td>
+      <td>51.4789</td>
+      <td>25.0</td>
+      <td>HEATHROW</td>
+    </tr>
+    <tr>
+      <th>83943</th>
+      <td>UKE00107650</td>
+      <td>2016</td>
+      <td>12</td>
+      <td>27</td>
+      <td>0.0</td>
+      <td>2016-12-27</td>
+      <td>0.4489</td>
+      <td>51.4789</td>
+      <td>25.0</td>
+      <td>HEATHROW</td>
+    </tr>
+    <tr>
+      <th>83944</th>
+      <td>UKE00107650</td>
+      <td>2016</td>
+      <td>12</td>
+      <td>28</td>
+      <td>0.2</td>
+      <td>2016-12-28</td>
+      <td>0.4489</td>
+      <td>51.4789</td>
+      <td>25.0</td>
+      <td>HEATHROW</td>
+    </tr>
+    <tr>
+      <th>83945</th>
+      <td>UKE00107650</td>
+      <td>2016</td>
+      <td>12</td>
+      <td>29</td>
+      <td>0.4</td>
+      <td>2016-12-29</td>
+      <td>0.4489</td>
+      <td>51.4789</td>
+      <td>25.0</td>
+      <td>HEATHROW</td>
+    </tr>
+    <tr>
+      <th>83946</th>
+      <td>UKE00107650</td>
+      <td>2016</td>
+      <td>12</td>
+      <td>30</td>
+      <td>0.0</td>
+      <td>2016-12-30</td>
+      <td>0.4489</td>
+      <td>51.4789</td>
+      <td>25.0</td>
+      <td>HEATHROW</td>
+    </tr>
+    <tr>
+      <th>83947</th>
+      <td>UKE00107650</td>
+      <td>2016</td>
+      <td>12</td>
+      <td>31</td>
+      <td>0.4</td>
+      <td>2016-12-31</td>
+      <td>0.4489</td>
+      <td>51.4789</td>
+      <td>25.0</td>
+      <td>HEATHROW</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="save-to-file">Save to file</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">'London_5stns_GHCN-D.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="plot-histogram-of-all-data">Plot histogram of all data</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'PRCP'</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11ae36898&gt;
+</code></pre></div></div>
+
+<p><img src="/images/notebooks/ghcn_daily_data/output_14_1.png" alt="png" /></p>
+
+<h3 id="plot-time-series-for-one-station">Plot time series for one station</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">heathrow</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'HEATHROW'</span> <span class="p">]</span>
+<span class="n">heathrow</span><span class="p">[</span><span class="s">'PRCP'</span><span class="p">].</span><span class="n">plot</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x81f0d7240&gt;
+</code></pre></div></div>
+
+<p><img src="/images/notebooks/ghcn_daily_data/output_16_1.png" alt="png" /></p>
+
+:ET

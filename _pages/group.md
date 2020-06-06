@@ -4,7 +4,7 @@ title: "Group"
 excerpt: "group"
 ---
 
-I lead a research group focused on the application of probabilistic machine learning for tackling environmental challenges
+I lead a research group focused on the application of machine learning for tackling environmental challenges.
 
 
 ## Staff

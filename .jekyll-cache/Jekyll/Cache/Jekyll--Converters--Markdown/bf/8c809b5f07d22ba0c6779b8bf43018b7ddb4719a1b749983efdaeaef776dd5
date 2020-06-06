@@ -1,0 +1,37 @@
+I"<p>var store = [{
+        “title”: “Smoothing a noisy time series”,
+        “excerpt”:”using a low-pass filter def lpfilter(input_signal, win): # Low-pass linear Filter # (2<em>win)+1 is the size of the window that determines the values that influence # the filtered result, centred over the current measurement from scipy import ndimage kernel = np.lib.pad(np.linspace(1,3,win), (0,win-1), ‘reflect’) kernel = np.divide(kernel,np.sum(kernel)) # normalise output_signal =…”,”categories”: [],
+        “tags”: [“python”,”scipy”,”filter”],
+        “url”: “http://localhost:4000/notebooks/smooth_timeseries/”,
+        “teaser”:null},{
+        “title”: “Using BASpy to read in climate model data (CMIP5) into Xarray”,
+        “excerpt”:”For this notebook to work you will need to install: BASpy (for getting data) Xarray (for processing data) Cartopy (for plotting maps) import baspy as bp import matplotlib.pyplot as plt import cartopy.crs as ccrs import xarray as xr %matplotlib inline Using BASpy Define the CMIP5 data we want to work…”,”categories”: [],
+        “tags”: [“python”,”xarray”,”baspy”,”cartopy”,”cmip”],
+        “url”: “http://localhost:4000/notebooks/baspy_using_xarray/”,
+        “teaser”:null},{
+        “title”: “Get monthly average weather station data (Global)”,
+        “excerpt”:”Extract countries of interest (along with their coordinates) from the Global Historical Climatology Network - Monthly (GHCNM) Version 3 A README file can be found here To run this script you will need to download the .dat and .inv files stored in the compressed files (ghncm.</em>.tar.gz) found here The code…”,”categories”: [],
+        “tags”: [“python”,”weather station”,”ghcn”,”notebook”,”jupyter”],
+        “url”: “http://localhost:4000/notebooks/ghcn_monthly/”,
+        “teaser”:null},{
+        “title”: “Get daily average weather station data (Global)”,
+        “excerpt”:”A set of Python tools to make it easier to extract weather station data (e.g., temperature, precipitation) from the Global Historical Climatology Network - Daily (GHCND) More information on the data can be found here The code can be downloaded from the get_station_data github repository from get_station_data import ghcnd from…”,”categories”: [],
+        “tags”: [“python”,”weather station”,”ghcn”,”notebook”,”jupyter”],
+        “url”: “http://localhost:4000/notebooks/ghcn_daily/”,
+        “teaser”:null},{
+        “title”: “Working with the RACMO regional climate model”,
+        “excerpt”:”This notebook was jointly written by Scott Hosking and Tony Phillips (BAS) import xarray as xr import numpy as np import matplotlib.pyplot as plt import matplotlib.colors as colors import cartopy.crs as ccrs import cartopy.feature as cfe import pyproj import pandas as pd Read in data ds = xr.open_dataset(‘~/Documents/RACMO/RACMO2.3p2_ANT27_precip_daily_1979_1980.nc’) Look at…”,”categories”: [],
+        “tags”: [“python”,”xarray”,”model”,”racmo”,”precipitation”,”rotated grid”,”rcm”],
+        “url”: “http://localhost:4000/notebooks/racmo_with_xarray/”,
+        “teaser”:null},{
+        “title”: “Creating an Amundsen Sea Low (ASL) index”,
+        “excerpt”:”This work is a continuation of my 2013 and 2016 papers as described here import xarray as xr import numpy as np import pandas as pd import matplotlib.pyplot as plt import cartopy.crs as ccrs from skimage.feature import peak_local_max Read in gridded monthly mean data for period 1979-2018 ds = xr.open_dataset(‘~/DATA/ERAI/erai_Surface_MonthlyMeansFromDaily.nc’)…”,”categories”: [],
+        “tags”: [“python”,”xarray”,”detection”,”asl”],
+        “url”: “http://localhost:4000/notebooks/asl_detection/”,
+        “teaser”:null},{
+        “title”: “Reading and plotting WRF data using wrf-python and Xarray”,
+        “excerpt”:”This page demonstrates how you can read in and work with output from the Weather Research and Forecasting (WRF) model For more information on the python packages used in this notebook, see: wrf-python Once the WRF data is in an Xarray DataArray there are additional tools you can use to…”,”categories”: [],
+        “tags”: [“python”,”xarray”,”wrf”,”rcm”],
+        “url”: “http://localhost:4000/notebooks/wrf_with_xarray/”,
+        “teaser”:null}]</p>
+:ET

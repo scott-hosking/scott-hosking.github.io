@@ -1,0 +1,286 @@
+I"å;<p>For this notebook to work you will need to install:</p>
+<ul>
+  <li><a href="https://github.com/scott-hosking/baspy">BASpy</a> (for getting data)</li>
+  <li><a href="http://xarray.pydata.org/en/stable/installing.html">Xarray</a> (for processing data)</li>
+  <li><a href="https://scitools.org.uk/cartopy/docs/latest/installing.html#installing">Cartopy</a> (for plotting maps)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">baspy</span> <span class="k">as</span> <span class="n">bp</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="n">ccrs</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="n">xr</span>
+
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span> 
+</code></pre></div></div>
+
+<h1 id="using-baspy">Using BASpy</h1>
+<h3 id="define-the-cmip5-data-we-want-to-work-with">Define the CMIP5 data we want to work with</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">catlg</span> <span class="o">=</span> <span class="n">bp</span><span class="p">.</span><span class="n">catalogue</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="s">'cmip5'</span><span class="p">,</span> <span class="n">Experiment</span><span class="o">=</span><span class="s">'historical'</span><span class="p">,</span> 
+                         <span class="n">Frequency</span><span class="o">=</span><span class="s">'mon'</span><span class="p">,</span> <span class="n">Var</span><span class="o">=</span><span class="s">'tas'</span><span class="p">,</span> 
+                         <span class="n">Model</span><span class="o">=</span><span class="s">'HadGEM2-ES'</span><span class="p">)</span>
+<span class="n">catlg</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">'Path'</span><span class="p">,</span><span class="s">'DataFiles'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Updating cached catalogue...
+catalogue memory usage (MB): 28.786099
+&gt;&gt; Current cached values (can be extended by specifying additional values or by setting read_everything=True) &lt;&lt;
+{'Experiment': ['piControl', 'rcp85', 'historical', 'rcp26', 'rcp45'], 'Frequency': ['mon']}
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Centre</th>
+      <th>Model</th>
+      <th>Experiment</th>
+      <th>Frequency</th>
+      <th>SubModel</th>
+      <th>CMOR</th>
+      <th>RunID</th>
+      <th>Version</th>
+      <th>Var</th>
+      <th>StartDate</th>
+      <th>EndDate</th>
+      <th>dataset</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>489465</th>
+      <td>MOHC</td>
+      <td>HadGEM2-ES</td>
+      <td>historical</td>
+      <td>mon</td>
+      <td>atmos</td>
+      <td>Amon</td>
+      <td>r2i1p1</td>
+      <td>v20110418</td>
+      <td>tas</td>
+      <td>185912</td>
+      <td>200512</td>
+      <td>cmip5</td>
+    </tr>
+    <tr>
+      <th>489511</th>
+      <td>MOHC</td>
+      <td>HadGEM2-ES</td>
+      <td>historical</td>
+      <td>mon</td>
+      <td>atmos</td>
+      <td>Amon</td>
+      <td>r4i1p1</td>
+      <td>v20110418</td>
+      <td>tas</td>
+      <td>185912</td>
+      <td>200511</td>
+      <td>cmip5</td>
+    </tr>
+    <tr>
+      <th>489557</th>
+      <td>MOHC</td>
+      <td>HadGEM2-ES</td>
+      <td>historical</td>
+      <td>mon</td>
+      <td>atmos</td>
+      <td>Amon</td>
+      <td>r3i1p1</td>
+      <td>v20110418</td>
+      <td>tas</td>
+      <td>185912</td>
+      <td>200512</td>
+      <td>cmip5</td>
+    </tr>
+    <tr>
+      <th>489605</th>
+      <td>MOHC</td>
+      <td>HadGEM2-ES</td>
+      <td>historical</td>
+      <td>mon</td>
+      <td>atmos</td>
+      <td>Amon</td>
+      <td>r1i1p1</td>
+      <td>v20120928</td>
+      <td>tas</td>
+      <td>185912</td>
+      <td>200511</td>
+      <td>cmip5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="select-one-model-run-one-row">Select one model run (one row)</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">row</span> <span class="o">=</span> <span class="n">catlg</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">row</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Centre                                                     MOHC
+Model                                                HadGEM2-ES
+Experiment                                           historical
+Frequency                                                   mon
+SubModel                                                  atmos
+CMOR                                                       Amon
+RunID                                                    r1i1p1
+Version                                               v20120928
+Var                                                         tas
+StartDate                                                185912
+EndDate                                                  200511
+Path          /MOHC/HadGEM2-ES/historical/mon/atmos/Amon/r1i...
+DataFiles     tas_Amon_HadGEM2-ES_historical_r1i1p1_185912-1...
+dataset                                                   cmip5
+Name: 489605, dtype: object
+</code></pre></div></div>
+
+<h1 id="using-xarray">Using Xarray</h1>
+
+<p>At this point (if the data is stored on the system we are on) we can read in multiple files as a Dataset using:
+ds = bp.open_dataset(row)</p>
+
+<p>However, assuming you do not have access to the CMIP5 or CMIP6 data archive, you can download 
+and get going with some CMIP6 sample data by running this line:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ds</span> <span class="o">=</span> <span class="n">bp</span><span class="p">.</span><span class="n">eg_Dataset</span><span class="p">()</span>
+<span class="n">ds</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;xarray.Dataset&gt;
+Dimensions:    (bnds: 2, lat: 180, lon: 288, time: 420)
+Coordinates:
+  * bnds       (bnds) float64 1.0 2.0
+    height     float64 ...
+  * lat        (lat) float64 -89.5 -88.5 -87.5 -86.5 -85.5 -84.5 -83.5 -82.5 ...
+  * lon        (lon) float64 0.625 1.875 3.125 4.375 5.625 6.875 8.125 9.375 ...
+  * time       (time) datetime64[ns] 1980-01-16T12:00:00 1980-02-15T12:00:00 ...
+Data variables:
+    lat_bnds   (lat, bnds) float64 ...
+    lon_bnds   (lon, bnds) float64 ...
+    tas        (time, lat, lon) float32 ...
+    time_bnds  (time, bnds) datetime64[ns] ...
+Attributes:
+    title:                 NOAA GFDL GFDL-AM4 model output prepared for CMIP6...
+    history:               File was processed by fremetar (GFDL analog of CMO...
+    table_id:              Amon
+    contact:               gfdl.climate.model.info@noaa.gov
+    comment:               &lt;null ref&gt;
+    tracking_id:           hdl:21.14100/3b95ceac-9bd6-42c9-a130-130fc1ba108c
+    further_info_url:      https://furtherinfo.es-doc.org/CMIP6.NOAA-GFDL.GFD...
+    branch_time_in_child:  0.0
+    branch_method:         no parent
+    creation_date:         2018-08-07T17:02:18Z
+    Conventions:           CF-1.7 CMIP-6.0 UGRID-1.0
+    sub_experiment:        none
+    frequency:             monC
+    forcing_index:         1
+    physics_index:         1
+    initialization_index:  1
+    realization_index:     1
+    parent_variant_label:  no parent
+    parent_experiment_id:  no parent
+    data_specs_version:    01.00.27
+    experiment_id:         amip
+    experiment:            AMIP
+    activity_id:           CMIP
+    source_id:             GFDL-AM4
+    source_type:           AGCM
+    institution_id:        NOAA-GFDL
+    institution:           National Oceanic and Atmospheric Administration, G...
+    variable_id:           tas
+    variant_info:          N/A
+    mip_era:               CMIP6
+    source:                "GFDL-AM4 (2017): aerosol: interactive;atmos: GFDL...
+    parent_activity_id:    no parent
+    parent_mip_era:        no parent
+    parent_source_id:      no parent
+    parent_time_units:     no parent
+    sub_experiment_id:     none
+    grid:                  atmos data regridded from Cubed-sphere (c96) to 18...
+    variant_label:         r1i1p1f1
+    grid_label:            gr1
+    license:               CMIP6 model data produced by NOAA-GFDL is licensed...
+    nominal_resolution:    100 km
+    product:               model-output
+    realm:                 atmos
+    references:            see further_info_url attribute
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># read a DataArray (e.g., a single variable) from the Dataset
+</span><span class="n">da</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">tas</span>
+<span class="n">da</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;xarray.DataArray 'tas' (time: 420, lat: 180, lon: 288)&gt;
+[21772800 values with dtype=float32]
+Coordinates:
+    height   float64 ...
+  * lat      (lat) float64 -89.5 -88.5 -87.5 -86.5 -85.5 -84.5 -83.5 -82.5 ...
+  * lon      (lon) float64 0.625 1.875 3.125 4.375 5.625 6.875 8.125 9.375 ...
+  * time     (time) datetime64[ns] 1980-01-16T12:00:00 1980-02-15T12:00:00 ...
+Attributes:
+    long_name:      Near-Surface Air Temperature
+    units:          K
+    cell_methods:   area: time: mean
+    cell_measures:  area: areacella
+    standard_name:  air_temperature
+    interp_method:  conserve_order2
+    original_name:  tas
+</code></pre></div></div>
+
+<h1 id="plotting">Plotting</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">da</span><span class="p">.</span><span class="n">plot</span><span class="p">()</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([  69415.,  442264.,  428669., 1430675., 1719399., 1709979.,
+        4552300., 4731607., 6553416.,  135076.]),
+ array([198.42273, 210.32277, 222.22281, 234.12283, 246.02287, 257.9229 ,
+        269.82294, 281.723  , 293.62302, 305.52307, 317.4231 ],
+       dtype=float32),
+ &lt;a list of 10 Patch objects&gt;)
+</code></pre></div></div>
+
+<p><img src="/images/notebooks/baspy_example/output_10_2.png" alt="png" /></p>
+
+<h3 id="plot-map-for-first-time-index">Plot map for first time index</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">da</span><span class="p">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">).</span><span class="n">plot</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.collections.QuadMesh at 0x3292b76a0&gt;
+</code></pre></div></div>
+
+<p><img src="/images/notebooks/baspy_example/output_12_1.png" alt="png" /></p>
+
+<h3 id="plot-using-a-polarstereo-map-projection">Plot using a polarstereo map projection</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">crs</span> <span class="o">=</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">SouthPolarStereo</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">crs</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">set_extent</span><span class="p">([</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="o">-</span><span class="mi">60</span><span class="p">],</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">()</span> <span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">ylocs</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">da</span><span class="p">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">).</span><span class="n">plot</span><span class="p">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">(),</span> 
+                                  <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="p">.</span><span class="n">cm</span><span class="p">.</span><span class="n">Blues_r</span><span class="p">,</span> 
+                                  <span class="n">extend</span><span class="o">=</span><span class="s">'both'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">coastlines</span><span class="p">(</span><span class="s">'110m'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'k'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x32af969e8&gt;
+</code></pre></div></div>
+
+<p><img src="/images/notebooks/baspy_example/output_14_1.png" alt="png" /></p>
+
+:ET

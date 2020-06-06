@@ -1,0 +1,42 @@
+I"
+<ul>
+  <li>using a low-pass filter</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">lpfilter</span><span class="p">(</span><span class="n">input_signal</span><span class="p">,</span> <span class="n">win</span><span class="p">):</span>
+    <span class="c1"># Low-pass linear Filter
+</span>    <span class="c1"># (2*win)+1 is the size of the window that determines the values that influence 
+</span>    <span class="c1"># the filtered result, centred over the current measurement
+</span>    <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">ndimage</span>
+    <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">lib</span><span class="p">.</span><span class="n">pad</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">win</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">win</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="s">'reflect'</span><span class="p">)</span> 
+    <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">divide</span><span class="p">(</span><span class="n">kernel</span><span class="p">,</span><span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">kernel</span><span class="p">))</span> <span class="c1"># normalise
+</span>    <span class="n">output_signal</span> <span class="o">=</span> <span class="n">ndimage</span><span class="p">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">input_signal</span><span class="p">,</span> <span class="n">kernel</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">output_signal</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1">### make up some data
+</span><span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">unsmoothed</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">*</span><span class="mf">0.4</span>
+
+<span class="c1">### smooth data using def
+</span><span class="n">smoothed</span> <span class="o">=</span> <span class="n">lpfilter</span><span class="p">(</span><span class="n">unsmoothed</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">unsmoothed</span><span class="p">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">smoothed</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1">### plot data
+</span><span class="n">plt</span><span class="p">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">unsmoothed</span><span class="p">,</span> <span class="s">'k'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">smoothed</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>((100,), (100,))
+</code></pre></div></div>
+
+<p><img src="/images/notebooks/smooth_timeseries/output_2_1.png" alt="png" /></p>
+
+:ET

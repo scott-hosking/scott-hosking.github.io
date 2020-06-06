@@ -1,0 +1,372 @@
+I",<p>Extract countries of interest (along with their coordinates) from the
+<a href="https://www.ncdc.noaa.gov/ghcnm/v3.php">Global Historical Climatology Network - Monthly (GHCNM) Version 3</a></p>
+
+<p>A README file can be found <a href="ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v3/README">here</a></p>
+
+<p>To run this script you will need to download the .dat and .inv files stored in the compressed files (ghncm.*.tar.gz) found <a href="ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v3/">here</a></p>
+
+<p>The code can be downloaded from the <a href="https://github.com/scott-hosking/get_station_data"><em>get_station_data</em></a> github repository</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="nn">get_station_data</span> <span class="kn">import</span> <span class="n">ghcnm</span>
+</code></pre></div></div>
+
+<h3 id="name-of-original-data-file-from-ghcn-m">Name of original data file from GHCN-M</h3>
+<p>ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v3/</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_version</span> <span class="o">=</span> <span class="s">'v3.3.0.20180404'</span>
+<span class="n">data_fname</span>   <span class="o">=</span> <span class="s">'raw_data/ghcnm.tavg.'</span><span class="o">+</span><span class="n">data_version</span><span class="o">+</span><span class="s">'.qca.dat'</span>
+<span class="n">stn_md_fname</span> <span class="o">=</span> <span class="s">'raw_data/ghcnm.tavg.'</span><span class="o">+</span><span class="n">data_version</span><span class="o">+</span><span class="s">'.qca.inv'</span>
+
+<span class="n">stn_md</span> <span class="o">=</span> <span class="n">ghcnm</span><span class="p">.</span><span class="n">get_stn_metadata</span><span class="p">(</span><span class="n">stn_md_fname</span><span class="p">)</span>
+
+<span class="n">stn_md</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>station</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>elev</th>
+      <th>name</th>
+      <th>country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10160355000</td>
+      <td>36.93</td>
+      <td>6.95</td>
+      <td>7.0</td>
+      <td>SKIKDA</td>
+      <td>ALGERIA</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10160360000</td>
+      <td>36.83</td>
+      <td>7.82</td>
+      <td>4.0</td>
+      <td>ANNABA</td>
+      <td>ALGERIA</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10160390000</td>
+      <td>36.72</td>
+      <td>3.25</td>
+      <td>25.0</td>
+      <td>DAR-EL-BEIDA</td>
+      <td>ALGERIA</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>10160395001</td>
+      <td>36.52</td>
+      <td>4.18</td>
+      <td>942.0</td>
+      <td>FT. NATIONAL</td>
+      <td>ALGERIA</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>10160400001</td>
+      <td>36.80</td>
+      <td>5.10</td>
+      <td>230.0</td>
+      <td>CAP CARBON</td>
+      <td>ALGERIA</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="specify-countries-to-extract-data-from">Specify countries to extract data from</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">country_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Egypt'</span><span class="p">,</span> <span class="s">'Libya'</span><span class="p">,</span> <span class="s">'Sudan'</span><span class="p">,</span> <span class="s">'ISRAEL'</span><span class="p">,</span> \
+                    <span class="s">'SAUDI ARABIA'</span><span class="p">,</span> <span class="s">'Chad'</span><span class="p">,</span> <span class="s">'Jordan'</span><span class="p">]</span>
+
+<span class="n">my_stns</span> <span class="o">=</span> <span class="n">ghcnm</span><span class="p">.</span><span class="n">extract_countries</span><span class="p">(</span><span class="n">stn_md</span><span class="p">,</span> <span class="n">country_names</span><span class="p">)</span>
+
+<span class="n">my_stns</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>station</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>elev</th>
+      <th>name</th>
+      <th>country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>132</th>
+      <td>11064700000</td>
+      <td>12.13</td>
+      <td>15.03</td>
+      <td>295.0</td>
+      <td>NDJAMENA</td>
+      <td>CHAD</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>11064701000</td>
+      <td>14.12</td>
+      <td>15.32</td>
+      <td>355.0</td>
+      <td>MAO</td>
+      <td>CHAD</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>11064702000</td>
+      <td>13.43</td>
+      <td>14.73</td>
+      <td>292.0</td>
+      <td>BOL-BERIM</td>
+      <td>CHAD</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>11064705000</td>
+      <td>10.48</td>
+      <td>16.72</td>
+      <td>336.0</td>
+      <td>BOUSSO</td>
+      <td>CHAD</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>11064706000</td>
+      <td>8.62</td>
+      <td>16.07</td>
+      <td>422.0</td>
+      <td>MOUNDOU</td>
+      <td>CHAD</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="extract-data-for-specified-stations-into-a-pandas-dataframe">Extract data for specified stations into a Pandas DataFrame</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">ghcnm</span><span class="p">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">data_fname</span><span class="p">,</span> <span class="n">my_stns</span><span class="p">)</span>
+<span class="n">df</span><span class="p">.</span><span class="n">columns</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Index(['country', 'name', 'station', 'lat', 'lon', 'elev', 'year', 'month',
+       'variable', 'value', 'dmflag', 'qcflag', 'dsflag'],
+      dtype='object')
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">'dmflag'</span><span class="p">,</span> <span class="s">'qcflag'</span><span class="p">,</span> <span class="s">'dsflag'</span><span class="p">]).</span><span class="n">tail</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>name</th>
+      <th>station</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>elev</th>
+      <th>year</th>
+      <th>month</th>
+      <th>variable</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>79298</th>
+      <td>JORDAN</td>
+      <td>AQABA AIRPORT</td>
+      <td>62440340000</td>
+      <td>29.63</td>
+      <td>35.02</td>
+      <td>51</td>
+      <td>1990</td>
+      <td>3</td>
+      <td>TAVG</td>
+      <td>18.9</td>
+    </tr>
+    <tr>
+      <th>79299</th>
+      <td>JORDAN</td>
+      <td>AQABA AIRPORT</td>
+      <td>62440340000</td>
+      <td>29.63</td>
+      <td>35.02</td>
+      <td>51</td>
+      <td>1990</td>
+      <td>4</td>
+      <td>TAVG</td>
+      <td>24.3</td>
+    </tr>
+    <tr>
+      <th>79300</th>
+      <td>JORDAN</td>
+      <td>AQABA AIRPORT</td>
+      <td>62440340000</td>
+      <td>29.63</td>
+      <td>35.02</td>
+      <td>51</td>
+      <td>1990</td>
+      <td>5</td>
+      <td>TAVG</td>
+      <td>26.9</td>
+    </tr>
+    <tr>
+      <th>79301</th>
+      <td>JORDAN</td>
+      <td>AQABA AIRPORT</td>
+      <td>62440340000</td>
+      <td>29.63</td>
+      <td>35.02</td>
+      <td>51</td>
+      <td>1990</td>
+      <td>6</td>
+      <td>TAVG</td>
+      <td>30.5</td>
+    </tr>
+    <tr>
+      <th>79302</th>
+      <td>JORDAN</td>
+      <td>AQABA AIRPORT</td>
+      <td>62440340000</td>
+      <td>29.63</td>
+      <td>35.02</td>
+      <td>51</td>
+      <td>1990</td>
+      <td>7</td>
+      <td>TAVG</td>
+      <td>32.4</td>
+    </tr>
+    <tr>
+      <th>79303</th>
+      <td>JORDAN</td>
+      <td>AQABA AIRPORT</td>
+      <td>62440340000</td>
+      <td>29.63</td>
+      <td>35.02</td>
+      <td>51</td>
+      <td>1990</td>
+      <td>8</td>
+      <td>TAVG</td>
+      <td>31.7</td>
+    </tr>
+    <tr>
+      <th>79304</th>
+      <td>JORDAN</td>
+      <td>AQABA AIRPORT</td>
+      <td>62440340000</td>
+      <td>29.63</td>
+      <td>35.02</td>
+      <td>51</td>
+      <td>1990</td>
+      <td>9</td>
+      <td>TAVG</td>
+      <td>28.9</td>
+    </tr>
+    <tr>
+      <th>79305</th>
+      <td>JORDAN</td>
+      <td>AQABA AIRPORT</td>
+      <td>62440340000</td>
+      <td>29.63</td>
+      <td>35.02</td>
+      <td>51</td>
+      <td>1990</td>
+      <td>10</td>
+      <td>TAVG</td>
+      <td>26.8</td>
+    </tr>
+    <tr>
+      <th>79306</th>
+      <td>JORDAN</td>
+      <td>AQABA AIRPORT</td>
+      <td>62440340000</td>
+      <td>29.63</td>
+      <td>35.02</td>
+      <td>51</td>
+      <td>1990</td>
+      <td>11</td>
+      <td>TAVG</td>
+      <td>23.2</td>
+    </tr>
+    <tr>
+      <th>79307</th>
+      <td>JORDAN</td>
+      <td>AQABA AIRPORT</td>
+      <td>62440340000</td>
+      <td>29.63</td>
+      <td>35.02</td>
+      <td>51</td>
+      <td>1990</td>
+      <td>12</td>
+      <td>TAVG</td>
+      <td>18.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="save-to-file">Save to file</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">'Egypt_surrounding_ghcnm.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+:ET

@@ -1,0 +1,7 @@
+I"„<p>For this notebook to work you will need to install:</p>
+<ul>
+  <li><a href="https://github.com/scott-hosking/baspy">BASpy</a> (for getting data)</li>
+  <li><a href="http://xarray.pydata.org/en/stable/installing.html">Xarray</a> (for processing data)</li>
+  <li><a href="https://scitools.org.uk/cartopy/docs/latest/installing.html#installing">Cartopy</a> (for plotting maps)</li>
+</ul>
+:ET

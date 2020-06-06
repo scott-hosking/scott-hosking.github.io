@@ -1,0 +1,16 @@
+I"<ul class="toc__menu">
+  <li><a href="#tools">Tools</a>
+    <ul>
+      <li><a href="#get-weather-station-data-global">Get weather station data (Global)</a></li>
+      <li><a href="#get-climate-model-output-cmip56">Get climate model output (CMIP5/6)</a></li>
+    </ul>
+  </li>
+  <li><a href="#notebooks">Notebooks</a>
+    <ul>
+      <li><a href="#getting-started">Getting started</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#useful-scripts">Useful scripts</a></li>
+    </ul>
+  </li>
+</ul>
+:ET
