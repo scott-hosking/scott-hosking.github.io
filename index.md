@@ -8,20 +8,20 @@ author_profile: true
 feature_row:
   - image_path: /images/asl_index/asl_index-v2_region.png
     alt: "placeholder image 1"
-    title: "Placeholder 1"
+    title: "Arctic Sea Ice"
     excerpt: "This is some sample content that goes here with **Markdown** formatting."
-  - image_path: /images/asl_index/asl_index-v2_region.png
+  - image_path: https://www.turing.ac.uk/sites/default/files/styles/hero/public/2019-12/iceberg_tracking.jpg
     alt: "placeholder image 2"
-    title: "Placeholder 2"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
-    url: "#test-link"
+    title: "Iceberg Tracking"
+    excerpt: "Improving tracking of iceberg populations in the Southern Ocean. Using machine learning to develop new methods to detect and track icebergs in radar satellite imagery"
+    url: "https://www.turing.ac.uk/research/research-projects/improving-tracking-iceberg-populations-southern-ocean"
     btn_label: "Read More"
     btn_class: "btn--inverse"
   - image_path: /images/asl_index/asl_index-v2_region.png
-    title: "Placeholder 3"
+    title: "West Antarctica"
     excerpt: "This is some sample content that goes here with **Markdown** formatting."
   - image_path: /images/asl_index/asl_index-v2_region.png
-    title: "Placeholder 4"
+    title: "Water Security"
     excerpt: "This is some sample content that goes here with **Markdown** formatting."
 ---
 
