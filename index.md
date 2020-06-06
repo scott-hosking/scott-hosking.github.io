@@ -31,3 +31,19 @@ I have secured over **£6 million** for BAS as Principal-Investigator and Co-Inv
 * Deputy Chair - [Cambridge Earth System Science DTP](http://essdtp.esc.cam.ac.uk/), 2017-18 
 * Secretary - [Global Environmental Research Committee](https://royalsociety.org/topics-policy/energy-environment-climate/global-environmental-research-committee/), The Royal Society, 2016-2017
 * Lecturer, Polar Science coordinator — Earth System Science Spring School , 2010-2014
+
+feature_row:
+  - image_path: /images/asl_index/asl_index-v2_region.png
+    alt: "placeholder image 1"
+    title: "Placeholder 1"
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+  - image_path: /images/asl_index/asl_index-v2_region.png
+    alt: "placeholder image 2"
+    title: "Placeholder 2"
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+    url: "#test-link"
+    btn_label: "Read More"
+    btn_class: "btn--inverse"
+  - image_path: /images/asl_index/asl_index-v2_region.png
+    title: "Placeholder 3"
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
