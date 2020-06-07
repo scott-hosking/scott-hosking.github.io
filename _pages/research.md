@@ -4,7 +4,7 @@ title: "Research"
 excerpt: "Research"
 ---
 
-<img align="right" width="350" src="/images/2d_Gaussian.png">
+<img align="right" width="50%" src="/images/2d_Gaussian.png">
 
 My group's research involves the application of AI and data science techniques on vast and various environmental datasets, including the output from climate models, and satellite and weather station data. 
 
