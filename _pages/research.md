@@ -4,7 +4,18 @@ title: "Research"
 excerpt: "Research"
 ---
 
-## Projects
+<img align="right" width="350" src="/images/2d_Gaussian.png">
+
+My group's research involves the application of AI and data science techniques on vast and various environmental datasets, including the output from climate models, and satellite and weather station data. 
+
+We aim to identify and understand the key mechanisms that drive year-to-year climate variability over vulnerable regions, the changes in frequency and strength of extreme weather events, and to reduce uncertainties in future climate predictions.
+
+In order to support business and policy decision making we apply AI and data pipelines that are **interpretable** (_not black-box_), **probabilistic**, and fully **reproducible**.
+
+
+
+
+## Funding
 I have secured over £6m for BAS, as Principal-Investigator and Co-Investigator on numerous grants. These include:
 
 * [Peruvian Glacier Retreat and its Impact on Water Security](https://gtr.ukri.org/projects?ref=NE%2FS013296%2F1) (Peru GROWS), NERC - Newton-Paulet Fund, 2019-2022

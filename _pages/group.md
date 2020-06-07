@@ -17,7 +17,7 @@ I lead a research group focused on the application of machine learning for tackl
     * [_Emergence of Climate Hazards_](https://gtr.ukri.org/projects?ref=NE%2FS004726%2F1)
 
 
-## PhD
+## PhD Students
 * Matt Amos (University of Lancaster, 2017-), Co-supervisor with Paul Young
 * Robert Rouse (University of Cambridge, 2018-), Co-supervisor with Allan McRobie and Emily Shuckburgh
     * [Industrial Fellow 2019](https://www.royalcommission1851.org/predicting-flooding-effects-with-ai/), Royal Commission for the Exhibition of 1851
@@ -26,7 +26,7 @@ I lead a research group focused on the application of machine learning for tackl
     * [Turing Enrichment Student](https://www.turing.ac.uk/people/doctoral-students/risa-ueno), Alan Turing Institute
 
 
-## MRes, MEng, MSc
+## MRes/MEng Students
 * Kenza Tazi (BAS & University of Cambridge, MRes, 2020)
 * Tudor Suciu (BAS & University of Cambridge, MRes, 2020), Co-supervisor with Hamish Pritchard
 * Marc Girona-Mata (University of Cambridge, MRes, 2020), Co-supervisor with Rich Turner

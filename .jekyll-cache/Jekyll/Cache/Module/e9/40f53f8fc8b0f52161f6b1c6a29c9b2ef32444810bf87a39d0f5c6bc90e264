@@ -1,4 +1,4 @@
-I"Ž
+I"ä
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
@@ -14,6 +14,8 @@
               <a href="/publications" >Publications</a>
             </li><li class="masthead__menu-item">
               <a href="/code" >Code</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv" >CV</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">

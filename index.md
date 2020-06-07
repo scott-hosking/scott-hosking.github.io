@@ -28,9 +28,10 @@ feature_row:
     url: "/asl_index"
 ---
 
-I am an _Environmental Data Scientist_ at the British Antarctic Survey ([BAS](http://www.bas.ac.uk)) and a _Senior Research Fellow_ at the [Alan Turing Institute](https://www.turing.ac.uk/). My research involves the application of AI and machine learning techniques on vast and various datasets, including the output from global climate models and weather stations.  The primary aims of my work is to identify and understand the key mechanisms that drive year-to-year climate variability over vulnerable regions, the changes in frequency and strength of extreme weather events, and to reduce uncertainties in future climate predictions to help drive environmental policy. 
+I am an _Environmental Data Scientist_ at the British Antarctic Survey ([BAS](http://www.bas.ac.uk)) and _Head of the_ [_BAS AI Lab_](http://www.bas.ac.uk/ai). I am also a _Senior Research Fellow_ at the [Alan Turing Institute](https://www.turing.ac.uk/), and a _Co-Director_ of the UKRI Centre for Doctoral Training (CDT) in the _Application of AI for the study of Environmental Risks_ ([_AI4ER_](https://ai4er-cdt.esc.cam.ac.uk/)) at the University of Cambridge.
 
-I am the **Head** of the [_BAS AI Lab_](http://www.bas.ac.uk/ai), and a **Co-Director** of the Centre for Doctoral Training (CDT) in the _Application of AI for the study of Environmental Risks_ ([_AI4ER_](https://ai4er-cdt.esc.cam.ac.uk/)) which is jointly led with the University of Cambridge.
+My research focuses on **artificial intelligence and data science** to identify and understand the physical mechanisms that drive **high-impact climate events** with the aim to reduce uncertainties in future predictions and help inform **environmental policy**.
 
-## Highlights 
+## Highlights
+
 {% include feature_row %}
