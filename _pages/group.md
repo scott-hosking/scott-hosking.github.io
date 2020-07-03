@@ -4,17 +4,16 @@ title: "Group"
 excerpt: "group"
 ---
 
-I lead a research group focused on the application of machine learning for tackling environmental challenges.
-
+I lead a research group within the [BAS AI Lab](https://www.bas.ac.uk/ai) focused on the application of machine learning for tackling environmental challenges.
 
 ## Staff
-* Tom Andersson (Data Scientist)
-    * [_Understanding Arctic sea ice loss_](https://www.turing.ac.uk/research/research-projects/understanding-arctic-sea-ice-loss)
-* Anita Faul (Data Scientist)
-    * [_Improving tracking of iceberg populations in the Southern Ocean_](https://www.turing.ac.uk/research/research-projects/improving-tracking-iceberg-populations-southern-ocean)
+* Tom Andersson (Deep Learning - Sea Ice)
+* Anita Faul (AI Algorithm Developer - Earth Observation)
+* Grzegorz Muszynski (Data Scientist - Water Security) 
 * Tony Phillips (Data and Software Manager)
-* Charles Simpson (Data Scientist) 
-    * [_Emergence of Climate Hazards_](https://gtr.ukri.org/projects?ref=NE%2FS004726%2F1)
+* Charles Simpson (Data Scientist - Climate Impacts) 
+
+_there are many other members working in this area as part of the [BAS AI Lab](https://www.bas.ac.uk/project/ai/#people)_
 
 
 ## PhD Students

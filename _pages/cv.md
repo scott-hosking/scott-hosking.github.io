@@ -7,7 +7,7 @@ toc: True
 
 ## Career History
 * Research Scientist, [British Antarctic Survey](http://www.bas.ac.uk)
-    * Head of the [BAS AI Lab](http://www.bas.ac.uk/ai), 2019-
+    * Leader of the [BAS AI Lab](http://www.bas.ac.uk/ai), 2019-
     * Environmental Data Scientist, 2016-
     * Global Climate Modeller, 2009-2016
 * Senior Research Fellow, [Alan Turing Institute](https://www.turing.ac.uk/), 2020-
