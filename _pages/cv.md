@@ -12,7 +12,7 @@ toc: True
     * Global Climate Modeller, 2009-2016
 * Senior Research Fellow, [The Alan Turing Institute](https://www.turing.ac.uk/), 2020-
     * Environmental Leader, [Data Science for Science](https://www.turing.ac.uk/research/research-programmes/data-science-science) programme
-* Co-Director, UKRI Centre for Doctoral Training (CDT) in [AI for Environmental Risks (AI4ER)](https://ai4er-cdt.esc.cam.ac.uk/)), 2019-
+* Co-Director, UKRI Centre for Doctoral Training (CDT) in [AI for Environmental Risks (AI4ER)](https://ai4er-cdt.esc.cam.ac.uk/), 2019-
 * PhD, Climate Science, University of Cambridge, 2005-2009
     * Supervisors: Prof. John Pyle FRS, Prof. Peter Haynes
 
