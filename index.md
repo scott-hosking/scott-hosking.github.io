@@ -39,7 +39,7 @@ My primary roles are:
 * _Leader of the_ [_BAS AI Lab_](http://www.bas.ac.uk/ai)
 * _Senior Research Fellow_ at [The Alan Turing Institute](https://www.turing.ac.uk/)
 * _Co-Director_ of the UKRI Centre for Doctoral Training (CDT) in 
-[AI for Environmental Risks (AI4ER)](https://ai4er-cdt.esc.cam.ac.uk/)) at the University of Cambridge.
+[AI for Environmental Risks (AI4ER)](https://ai4er-cdt.esc.cam.ac.uk/) at the University of Cambridge.
 
 
 ## Highlights
