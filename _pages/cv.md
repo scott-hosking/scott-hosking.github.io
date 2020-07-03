@@ -10,10 +10,10 @@ toc: True
     * Leader of the [BAS AI Lab](http://www.bas.ac.uk/ai), 2018-
     * Environmental Data Scientist, 2016-
     * Global Climate Modeller, 2009-2016
-* Senior Research Fellow, [Alan Turing Institute](https://www.turing.ac.uk/), 2020-
+* Senior Research Fellow, [The Alan Turing Institute](https://www.turing.ac.uk/), 2020-
     * Environmental Leader, [Data Science for Science](https://www.turing.ac.uk/research/research-programmes/data-science-science) programme
-* Co-Director, Centre in 'AI for Environmental Risks' ([_AI4ER_](https://ai4er-cdt.esc.cam.ac.uk/)), 2019-
-* PhD, Atmospheric Science, University of Cambridge, 2005-2009
+* Co-Director, UKRI Centre for Doctoral Training (CDT) in [AI for Environmental Risks (AI4ER)](https://ai4er-cdt.esc.cam.ac.uk/)), 2019-
+* PhD, Climate Science, University of Cambridge, 2005-2009
     * Supervisors: Prof. John Pyle FRS, Prof. Peter Haynes
 
 ## Other Roles
