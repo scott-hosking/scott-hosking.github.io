@@ -18,21 +18,26 @@ _there are many other members working in this area as part of the [BAS AI Lab](h
 
 ## PhD Students
 * Matt Amos (University of Lancaster, 2017-), Co-supervisor with Paul Young
+* Marc Girona-Mata (University of Cambridge, 2020), Co-supervisor with Andrew Orr and Rich Turner
 * Robert Rouse (University of Cambridge, 2018-), Co-supervisor with Allan McRobie and Emily Shuckburgh
     * [Industrial Fellow 2019](https://www.royalcommission1851.org/predicting-flooding-effects-with-ai/), Royal Commission for the Exhibition of 1851
+* Kenza Tazi (BAS & University of Cambridge, 2020-)
+* Raghul Parthipan (University of Cambridge, 2020-), Co-supervisor with Michael Herzog
+* Petr Dolezal (University of Cambridge, 2020-), Co-supervisor with Srinivasan Keshav
+* Michelle Wan (University of Cambridge, 2020-), Co-supervisor with Pietro Lio and Alex Archibald
 * Will Tebbutt (University of Cambridge, 2017-), Co-supervisor with Rich Turner
 * Risa Ueno (BAS & University of Cambridge, 2018-)
-    * [Turing Enrichment Student](https://www.turing.ac.uk/people/doctoral-students/risa-ueno), Alan Turing Institute
+    * [Turing Enrichment Student](https://www.turing.ac.uk/people/enrichment-students/risa-ueno), Alan Turing Institute
 
 
-## MRes/MEng Students
-* Kenza Tazi (BAS & University of Cambridge, MRes, 2020)
-* Tudor Suciu (BAS & University of Cambridge, MRes, 2020), Co-supervisor with Hamish Pritchard
+<!-- ## MRes/MEng Students -->
+
+
+## Completed students & past members
 * Marc Girona-Mata (University of Cambridge, MRes, 2020), Co-supervisor with Rich Turner
+* Tudor Suciu (BAS & University of Cambridge, MRes, 2020), Co-supervisor with Hamish Pritchard
+* Kenza Tazi (BAS & University of Cambridge, MRes, 2020)
 * Anna Vaughan (University of Cambridge, MRes, 2020), Co-supervisor with Rich Turner
-
-
-## Past members
 * Daniel Bannister (BAS, Post-Doc, 2015-18)
 * Michelle McCrystall (BAS & University of Cambridge, PhD, 2014-17)
 * Fruzsina Agocs (University of Cambridge, PhD Industrial Placement, 2019-20)
