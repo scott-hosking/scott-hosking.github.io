@@ -7,7 +7,7 @@ toc: True
 
 ## Tools
 
-Here I have listed some Python tools I have developed to improve research efficiency. Please feel free to get in touch if you have any suggestions, or if you found them useful
+Here I have listed some Python tools I have developed to improve research efficiency. I have limited capacity to update these but feel free to use them if useful.
 
 ### Get **weather station** data (Global) 
 * Can run from your laptop etc

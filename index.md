@@ -17,11 +17,11 @@ feature_row:
   - image_path: /images/research/business_risks4.png
     title: "Business risk from climate change"
     excerpt: "Quantifying risks of extreme weather and disruption to businesses and supply chains"
-    url: "https://www.cam.ac.uk/research/news/new-approaches-to-help-businesses-tackle-climate-change"
+    url: "https://www.bas.ac.uk/media-post/climate-scientists-help-businesses-tackle-climate-change/"
   - image_path: /images/research/wind_turbines.jpg
     title: "Wind energy in a 1.5˚C world"
     excerpt: "The UK and large parts of Europe could become windier if global temperatures reach 1.5˚C above pre-industrial levels"
-    url: "https://www.carbonbrief.org/uk-onshore-wind-energy-potential-could-rise-by-10-with-1-5c-warming"
+    url: "https://www.bas.ac.uk/media-post/european-wind-energy-generation-potential-in-a-1-5%cb%9ac-warmer-world/"
   - image_path: /images/research/asl_index-crop3.png
     title: "West Antarctic climate index"
     excerpt: "Disentangling environmental signals over the region with greatest climate variability in the Southern Hemisphere"
