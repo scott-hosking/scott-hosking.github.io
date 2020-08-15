@@ -1,1 +1,1 @@
-Sitemap: https://scott-hosking.github.io/sitemap.xml
+Sitemap: https://scotthosking.com/sitemap.xml
