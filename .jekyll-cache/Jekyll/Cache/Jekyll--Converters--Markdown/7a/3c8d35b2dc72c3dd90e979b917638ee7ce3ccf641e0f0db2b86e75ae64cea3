@@ -1,11 +1,11 @@
-I"ä<h2 id="tools">Tools</h2>
+I"ï¿½<h2 id="tools">Tools</h2>
 
 <p>Here I have listed some Python tools I have developed to improve research efficiency. Please feel free to get in touch if you have any suggestions, or if you found them useful</p>
 
 <h3 id="get-weather-station-data-global">Get <strong>weather station</strong> data (Global)</h3>
 <ul>
   <li>Can run from your laptop etc</li>
-  <li><a href="https://github.com/scott-hosking/get_station_data">GitHub repo</a></li>
+  <li><a href="https://github.com/scotthosking/get_station_data">GitHub repo</a></li>
   <li>Notebooks for working with <a href="/notebooks/ghcn_monthly">monthly</a> and <a href="/notebooks/ghcn_daily">daily</a> averaged data</li>
 </ul>
 
@@ -27,7 +27,7 @@
 <h3 id="get-climate-model-output-cmip56">Get <strong>climate model</strong> output (CMIP5/6)</h3>
 <ul>
   <li>Needs to run on systems where data is stored (e.g. <a href="http://www.jasmin.ac.uk/">JASMIN</a>)</li>
-  <li><a href="https://github.com/scott-hosking/baspy">GitHub repo</a></li>
+  <li><a href="https://github.com/scotthosking/baspy">GitHub repo</a></li>
 </ul>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">baspy</span> <span class="k">as</span> <span class="n">bp</span>

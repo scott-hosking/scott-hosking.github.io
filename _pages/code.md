@@ -11,7 +11,7 @@ Here I have listed some Python tools I have developed to improve research effici
 
 ### Get **weather station** data (Global) 
 * Can run from your laptop etc
-* [GitHub repo](https://github.com/scott-hosking/get_station_data)
+* [GitHub repo](https://github.com/scotthosking/get_station_data)
 * Notebooks for working with [monthly](/notebooks/ghcn_monthly) and [daily](/notebooks/ghcn_daily) averaged data
 
 ```python
@@ -32,7 +32,7 @@ df = ghcnd.get_data(my_stns)
 
 ### Get **climate model** output (CMIP5/6)
 * Needs to run on systems where data is stored (e.g. [JASMIN](http://www.jasmin.ac.uk/))
-* [GitHub repo](https://github.com/scott-hosking/baspy)
+* [GitHub repo](https://github.com/scotthosking/baspy)
 
 ```python
 import baspy as bp

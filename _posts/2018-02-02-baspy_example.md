@@ -11,7 +11,7 @@ tags:
 ---
 
 For this notebook to work you will need to install:
-- [BASpy](https://github.com/scott-hosking/baspy) (for getting data)
+- [BASpy](https://github.com/scotthosking/baspy) (for getting data)
 - [Xarray](http://xarray.pydata.org/en/stable/installing.html) (for processing data)
 - [Cartopy](https://scitools.org.uk/cartopy/docs/latest/installing.html#installing) (for plotting maps)
 
