@@ -5,7 +5,7 @@
 <h3 id="get-weather-station-data-global">Get <strong>weather station</strong> data (Global)</h3>
 <ul>
   <li>Can run from your laptop etc</li>
-  <li><a href="https://github.com/scotthosking/get_station_data">GitHub repo</a></li>
+  <li><a href="https://github.com/scotthosking/get-station-data">GitHub repo</a></li>
   <li>Notebooks for working with <a href="/notebooks/ghcn_monthly">monthly</a> and <a href="/notebooks/ghcn_daily">daily</a> averaged data</li>
 </ul>
 

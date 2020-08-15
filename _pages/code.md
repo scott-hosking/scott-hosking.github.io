@@ -11,7 +11,7 @@ Here I have listed some Python tools I have developed to improve research effici
 
 ### Get **weather station** data (Global) 
 * Can run from your laptop etc
-* [GitHub repo](https://github.com/scotthosking/get_station_data)
+* [GitHub repo](https://github.com/scotthosking/get-station-data)
 * Notebooks for working with [monthly](/notebooks/ghcn_monthly) and [daily](/notebooks/ghcn_daily) averaged data
 
 ```python
