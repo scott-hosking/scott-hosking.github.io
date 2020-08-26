@@ -33,7 +33,9 @@ and [The Alan Turing Institute](https://www.turing.ac.uk/).
 My research focuses on artificial intelligence and data science 
 to identify and understand the physical mechanisms that drive 
 high-impact climate events with the aim to reduce uncertainties 
-in future predictions and help inform environmental policy.
+in future predictions and help inform environmental policy. 
+I also lead a new research programme to develop Digital Twins of 
+the natural environment.
  
 My primary roles are: 
 * Leader of the [BAS AI Lab](http://www.bas.ac.uk/ai)
