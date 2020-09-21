@@ -43,6 +43,10 @@ My primary roles are:
 * Co-Director of the UKRI Centre for Doctoral Training (CDT) in 
 [AI for Environmental Risks (AI4ER)](https://ai4er-cdt.esc.cam.ac.uk/) at the University of Cambridge.
 
+```
+We are hiring --> [Principal Researcher in Environmental AI](https://www.bas.ac.uk/jobs/vacancy/principal-researcher-in-environmental-ai/)
+```
+
 
 ## Highlights
 
