@@ -28,20 +28,22 @@ feature_row:
     url: "/asl_index"
 ---
 
-I am an _Environmental Data Scientist_ at the British Antarctic Survey ([BAS](http://www.bas.ac.uk))
+I am the Head of the [Artificial Intelligence (AI) Lab](http://www.bas.ac.uk/ai) at the British Antarctic Survey ([BAS](http://www.bas.ac.uk)) environmental research institute, and a Senior Research Fellow at [The Alan Turing Institute](https://www.turing.ac.uk/) the UK national institute for data science and AI. I am also a Co-Director for the University of Cambridge Centre for Doctoral Training in the Application of Artificial Intelligence to the study of Environmental Risks ([AI4ER](https://ai4er-cdt.esc.cam.ac.uk/)), a £6m UKRI funded programme to train over 50 top students to become future global leaders in environmental science. My research focuses on AI and data science methods to identify and understand the physical mechanisms that drive high-impact climate events with the aim to reduce uncertainties in future predictions and help inform environmental policy.
+
+<!-- I am an _Environmental Data Scientist_ at the British Antarctic Survey ([BAS](http://www.bas.ac.uk))
 and [The Alan Turing Institute](https://www.turing.ac.uk/).
 My research focuses on artificial intelligence and data science 
 to identify and understand the physical mechanisms that drive 
 high-impact climate events with the aim to reduce uncertainties 
 in future predictions and help inform environmental policy. 
 I also lead a new research programme to develop Digital Twins of 
-the natural environment.
+the natural environment. -->
  
-My primary roles are: 
+<!-- My primary roles are: 
 * Leader of the [BAS AI Lab](http://www.bas.ac.uk/ai)
 * Senior Research Fellow at [The Alan Turing Institute](https://www.turing.ac.uk/)
 * Co-Director of the UKRI Centre for Doctoral Training (CDT) in 
-[AI for Environmental Risks (AI4ER)](https://ai4er-cdt.esc.cam.ac.uk/) at the University of Cambridge.
+[AI for Environmental Risks (AI4ER)](https://ai4er-cdt.esc.cam.ac.uk/) at the University of Cambridge. -->
 
 ---
 
