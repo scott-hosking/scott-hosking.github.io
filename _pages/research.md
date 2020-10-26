@@ -10,7 +10,7 @@ My group's research involves the application of AI and data science techniques o
 
 We aim to identify and understand the key mechanisms that drive year-to-year climate variability over vulnerable regions, the changes in frequency and strength of extreme weather events, and to reduce uncertainties in future climate predictions.
 
-In order to support business and policy decision making we apply AI and data pipelines that are **interpretable** (_not 'black-box'_), **probabilistic**, and fully **reproducible**.
+In order to support business and policy decision making we aim to apply AI and data pipelines that are **interpretable** (_not 'black-box'_), **probabilistic**, and fully **reproducible**.
 
 
 
