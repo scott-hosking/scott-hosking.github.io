@@ -8,7 +8,7 @@ author_profile: true
 feature_row:
   - image_path: https://wwf-sight.org/wp-content/uploads/2020/12/Large_WW2120957_lih.jpg
     title: "Spatial Finance: Challenges and Opportunities"
-    excerpt: "A new geospatial driven approach with the potential to help financial markets differentiate commercial actors more accurately on their climate and environmental performance to aid realignment towards truly sustainable development"
+    excerpt: "A new geospatial driven approach with the potential to help financial markets"
     url: "https://wwf-sight.org/spatial-finance-challenges-and-opportunities/"
   - image_path: /images/research/arctic_ice_loss.jpg
     title: "Deep learning for Arctic sea ice"
