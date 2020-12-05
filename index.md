@@ -6,7 +6,7 @@ layout: single
 author_profile: true
 
 feature_row:
-  - image_path: https://wwf-sight.org/wp-content/uploads/2020/12/Large_WW2120957_lih.jpg
+  - image_path: /images/research/wwf_spatial_finance.jpg
     title: "Spatial Finance: Challenges and Opportunities"
     excerpt: "A new geospatial driven approach with the potential to help financial markets"
     url: "https://wwf-sight.org/spatial-finance-challenges-and-opportunities/"
