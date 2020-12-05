@@ -18,7 +18,7 @@ toc: True
 
 ## Awards and Prizes
 * [The Laws Prize](https://basclub.org/about/the-laws-prize/), British Antarctic Survey Club, 2017
-    *  _ awarded to outstanding young scientists of the British Antarctic Survey in recognition of their achievements, whilst fulfilling the primary purpose of the British Antarctic Survey_
+    *  _awarded to outstanding young scientists of the British Antarctic Survey in recognition of their achievements, whilst fulfilling the primary purpose of the British Antarctic Survey_
 
 ## Other Roles
 * Chair, [AI4ER](https://ai4er-cdt.esc.cam.ac.uk/) Research Committee, University of Cambridge, 2019-
