@@ -2,6 +2,7 @@
 permalink: /research
 title: "Research"
 excerpt: "Research"
+layout: wide
 ---
 
 <img align="right" width="50%" src="/images/2d_Gaussian.png">
