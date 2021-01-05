@@ -15,6 +15,8 @@ toc: True
 * Co-Director, UKRI Centre for Doctoral Training (CDT) in [AI for Environmental Risks (AI4ER)](https://ai4er-cdt.esc.cam.ac.uk/), 2019-
 * PhD, Climate Science, University of Cambridge, 2005-2009
     * Supervisors: Prof. John Pyle FRS, Prof. Peter Haynes
+    <!-- * e-Science -->
+    <!-- * 5 papers -->
 
 ## Awards and Prizes
 * [The Laws Prize](https://basclub.org/about/the-laws-prize/), British Antarctic Survey Club, 2017
