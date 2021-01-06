@@ -55,10 +55,10 @@ the natural environment. -->
 
 ---
 
-<span style="color:red"> We are hiring: 
+<span style="color:red"> We are hiring:</span>
 * [Postdoctoral Research Associate, Environmental Sensors](https://cezanneondemand.intervieweb.it/turing/jobs/postdoctoral_research_associate_environmental_sensors_11807/en/)
 * [Postdoctoral Research Associate, Machine Learning and Food Security](https://cezanneondemand.intervieweb.it/turing/jobs/postdoctoral_research_associate_machine_learning_and_food_security_11818/en/)
-</span>
+
 
 ---
 
