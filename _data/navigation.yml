@@ -6,8 +6,8 @@ main:
     url: /group   
   - title: "Publications"
     url: /publications
-  - title: "Code"
-    url: /code
+  # - title: "Code"
+  #   url: /code
   - title: "CV"
     url: /cv
   # - title: "Sample Posts"
