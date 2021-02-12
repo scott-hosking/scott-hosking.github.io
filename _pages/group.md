@@ -7,6 +7,7 @@ excerpt: "group"
 I lead a research group within the [BAS AI Lab](https://www.bas.ac.uk/ai) focused on the application of machine learning for environmental science.
 
 ## Staff
+* Clare Allen-Sader (Regional Climate Modeller) 
 * Tom Andersson (Deep Learning - Sea Ice)
 * Anita Faul (AI Algorithm Developer - Earth Observation)
 * Grzegorz Muszynski (Data Scientist - Water Security) 
