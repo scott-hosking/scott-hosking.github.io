@@ -7,7 +7,7 @@ toc: True
 
 ## Tools
 
-Here I have listed some Python tools I have developed to improve research efficiency. I have limited capacity to update these but feel free to use them if useful.
+Here I have listed some Python tools I have developed. I have limited capacity to update these so use at your own risk. You can also [buy me a coffee](https://www.buymeacoffee.com/scotthosking) if you found them useful :-)
 
 ### Get **weather station** data (Global) 
 * Can run from your laptop etc
@@ -51,7 +51,7 @@ for index, row in df.iterrows():
 
 ## Notebooks
 
-Here are some Python notebooks I use for research and teaching. Please feel free to get in touch if you have any comments, _even if just to say you found them useful_
+Here are some Python notebooks I use for research and teaching. Please feel free to get in touch if you have any comments, or [buy me a coffee](https://www.buymeacoffee.com/scotthosking)
 
 ### Getting started
 * Using [**BASpy** with **Xarray**](/notebooks/baspy_using_xarray) to read in climate model data (CMIP5)
