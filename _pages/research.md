@@ -11,7 +11,7 @@ My group's research involves the application of AI and data science techniques o
 
 We aim to identify and understand the key mechanisms that drive year-to-year climate variability over vulnerable regions, the changes in frequency and strength of extreme weather events, and to reduce uncertainties in future climate predictions.
 
-In order to support business and policy decision making we aim to apply AI and data pipelines that are **interpretable** (_not 'black-box'_), **probabilistic**, and fully **reproducible**.
+In order to support business and policy decision making we aim to apply AI and data pipelines that are **interpretable** (_not 'black-box'_), **probabilistic**, and **reproducible**.
 
 ## Funding
 I have secured over £7m in grant funding from public and private sectors as both Principal-Investigator (PI) and Co-Investigator (Co-I). These include:
@@ -21,7 +21,7 @@ I have secured over £7m in grant funding from public and private sectors as bot
     * [Understanding Arctic sea ice loss](https://www.turing.ac.uk/research/research-projects/understanding-arctic-sea-ice-loss), 2019-2021 (PI)
     * [Improving tracking of iceberg populations in the Southern Ocean](https://www.turing.ac.uk/research/research-projects/improving-tracking-iceberg-populations-southern-ocean), 2019-2021 (Co-I)
     * Detecting changes in Himalayan glaciers and impacts on water security, 2020-2021 (PI)
-* [Supporting Pangeo: the community-driven platform for Big Data geoscience](https://www.turing.ac.uk/research/research-projects/supporting-pangeo-community-driven-platform-big-data-geoscience), 2020-2021 (Co-I)
+* [Supporting Pangeo: the community-driven platform for Big Data geoscience](https://www.turing.ac.uk/research/research-projects/supporting-pangeo-community-driven-platform-big-data-geoscience), Microsoft AI for Earth, 2020-2021 (Co-I)
 * AI for Earth Observation, European Space Agency (ESA), 2020-2022 (Co-I)
 * [Peruvian Glacier Retreat and its Impact on Water Security](https://gtr.ukri.org/projects?ref=NE%2FS013296%2F1) (Peru GROWS), NERC (NE/S013296/1) - Newton-Paulet Fund, 2019-2022 (Co-I)
 * [Emergence of Climate Hazards](https://gtr.ukri.org/projects?ref=NE%2FS004726%2F1), NERC (NE/S004726/1), 2019-2022 (Co-I)
@@ -30,7 +30,8 @@ I have secured over £7m in grant funding from public and private sectors as bot
 * [Ice shelves in a warming world: Filchner Ice Shelf system, Antarctica (FISS)](https://gtr.ukri.org/projects?ref=NE%2FL013770%2F1), NERC (NE/L013770/1), 2015-2020 (Co-I)
 
 ## Collaborations
-Microsoft Research | 
+Microsoft AI for Earth | 
+Microsoft Research Lab - Cambridge | 
 European Space Agency (ESA) | 
 UK Met Office | 
 Science and Technology Facilities Council | 
