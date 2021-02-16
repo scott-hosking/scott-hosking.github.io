@@ -53,15 +53,15 @@ the natural environment. -->
 * Co-Director of the UKRI Centre for Doctoral Training (CDT) in 
 [AI for Environmental Risks (AI4ER)](https://ai4er-cdt.esc.cam.ac.uk/) at the University of Cambridge. -->
 
-## We are hiring
-* 3 x Machine Learning Engineers/Researchers offered at two salary band:
-  * [UKRI Band D (Early career researcher)](https://www.bas.ac.uk/jobs/vacancy/machine-learning-engineer-researcher-environmental-science-band-d/)
-  * [UKRI Band E (Experienced researcher)]((https://www.bas.ac.uk/jobs/vacancy/machine-learning-engineer-researcher-environmental-science-band-e/))
+## We are hiring!!
+* 3 x Machine Learning Engineers/Researchers:
+  * [UKRI Salary Band D (Early career researcher)](https://www.bas.ac.uk/jobs/vacancy/machine-learning-engineer-researcher-environmental-science-band-d/)
+  * [UKRI Salary Band E (Experienced researcher)]((https://www.bas.ac.uk/jobs/vacancy/machine-learning-engineer-researcher-environmental-science-band-e/))
 * 1 x [Research Software Engineer](https://www.bas.ac.uk/jobs/vacancy/it-research-software-engineer/)
 * 1 x [HPC Support Engineer](https://www.bas.ac.uk/jobs/vacancy/hpc-support-engineer/)
 
 ## Studentships
-Unfortunatly I am unable to take on any new Masters or PhD students at this time. However, there maybe other supervisors in the [BAS AI Lab](https://www.bas.ac.uk/project/ai/#people) you could reach out to.
+As my [group](/group) has quickly grown this past year I am currently unable to take on any new Masters or PhD students. However, please feel free to reach out directly to my science colleagues at [BAS](https://www.bas.ac.uk/about/about-bas/our-organisation/our-science-teams/) if you are interested in doing a research project together with the [BAS AI Lab](https://www.bas.ac.uk/project/ai).
 
 ## Highlights
 {% include feature_row %}
