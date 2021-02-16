@@ -137,7 +137,7 @@ footer:
       icon: "fab fa-fw fa-twitter-square"
       url: https://twitter.com/scotthosking
     - label: "buymeacoffee"
-      icon: "fab fa-fw fa-coffee"
+      icon: "fas fa-fw fa-coffee"
       url: https://www.buymeacoffee.com/scotthosking
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
