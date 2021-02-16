@@ -3,7 +3,6 @@ permalink: /
 title: "About"
 excerpt: "Homepage - bio, roles etc"
 layout: single
-classes: wide
 author_profile: true
 
 feature_row:
