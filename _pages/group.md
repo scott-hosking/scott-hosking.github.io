@@ -29,8 +29,8 @@ _there are many other members working in this area as part of the [BAS AI Lab](h
     * [Turing Enrichment Student](https://www.turing.ac.uk/people/enrichment-students/risa-ueno), The Alan Turing Institute
 * Michelle Wan (University of Cambridge, 2020-), Co-supervisor with Pietro Liò and Alex Archibald
 
-## MRes/MEng Students
-* Eleanor Krige (University of Cambridge, Part III, 2021)
+## Masters Students
+* Eleanor Krige (University of Cambridge, MSci/Part III, 2021)
 
 ## Completed students & past members
 * Marc Girona-Mata (University of Cambridge, MRes, 2020), Co-supervisor with Rich Turner
